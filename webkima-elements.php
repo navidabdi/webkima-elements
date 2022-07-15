@@ -3,8 +3,8 @@
 /**
  * Plugin Name: وبکیما المنت
  * Plugin URI: https://webkima.com/
- * Description: بسته فارسی ساز افزونه المنتور پرو به همراه اضافه شدن 13 فونت فارسی، تقویم شمسی برای المنتور، قالب های آماده فارسی در کتابخانه المنتور و آیکون های ایرانی
- * Version: 1.0
+ * Description: یک افزونه کاملا سبک برای فارسی سازی و نصب فونت های فارسی روی افزونه المنتور رایگان و پرو
+ * Version: 1.0.0
  * Author: آکادمی وبکیما
  * Author URI: https://webkima.com/
  * Text Domain: webkima-element

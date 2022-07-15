@@ -8,12 +8,12 @@ class Admin
     {
         add_menu_page(
             'Webkima Elements',
-            'Webkima Elements',
+            'وبکیما المنت',
             'manage_options',
             'webkima_elements',
             array('WebkimaElements\Pages\Admin', 'admin_index'),
-            'dashicons-store',
-            11
+            WEBKIMA_ELEMENTS_URL . 'assets/icons/webkima-logo.svg',
+            59
         );
     }
 
