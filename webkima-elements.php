@@ -45,7 +45,7 @@ function deactivate_webkima_elements()
 {
     Deactivate::deactivate();
 }
-// register_deactivation_hook(__FILE__, 'deactivate_webkima_elements');
+register_deactivation_hook(__FILE__, 'deactivate_webkima_elements');
 
 /*
  * The code that runs during plugin Services
