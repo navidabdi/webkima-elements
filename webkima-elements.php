@@ -1,9 +1,5 @@
 <?php
 
-/*
-* @package WebkimaElements
-*/
-
 /**
  * Plugin Name: وبکیما المنت
  * Plugin URI: https://webkima.com/
@@ -29,3 +25,31 @@ if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
 define('WEBKIMA_ELEMENTS_URL', plugin_dir_url(__FILE__));
 define('WEBKIMA_ELEMENTS_PATH', plugin_dir_path(__FILE__));
 define('WEBKIMA_ELEMENTS_NAME', plugin_basename(__FILE__));
+
+use WebkimaElements\Base\Activate;
+use WebkimaElements\Base\Deactivate;
+
+/*
+ * The code that runs during plugin activation
+ */
+function activate_webkima_elements() 
+{
+    Activate::activate();
+}
+register_activation_hook(__FILE__, 'activate_webkima_elements');
+
+/*
+ * The code that runs during plugin deactivation
+*/
+function deactivate_webkima_elements()
+{
+    Deactivate::deactivate();
+}
+// register_deactivation_hook(__FILE__, 'deactivate_webkima_elements');
+
+/*
+ * The code that runs during plugin Services
+ */
+if (class_exists('WebkimaElements\\Init')) {
+    WebkimaElements\Init::register_services();
+}
