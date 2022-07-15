@@ -1,13 +1,14 @@
 <?php
 
 /**
- * Plugin Name: وبکیما المنت
+ * Plugin Name: Webkima Elements
  * Plugin URI: https://webkima.com/
- * Description: یک افزونه کاملا سبک برای فارسی سازی و نصب فونت های فارسی روی افزونه المنتور رایگان و پرو
+ * Description: A very light plugin for Persianization and installation of Persian fonts on the free and Pro Elementor plugin
  * Version: 1.0.0
- * Author: آکادمی وبکیما
+ * Author: Webkima Academy
  * Author URI: https://webkima.com/
- * Text Domain: webkima-element
+ * Text Domain: webkima-elements
+ * Domain Path: /languages
  * License: GPLv2 or later
  * Elementor tested up to: 3.6.5
  * Elementor Pro tested up to: 3.7.0
@@ -25,6 +26,25 @@ if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
 define('WEBKIMA_ELEMENTS_URL', plugin_dir_url(__FILE__));
 define('WEBKIMA_ELEMENTS_PATH', plugin_dir_path(__FILE__));
 define('WEBKIMA_ELEMENTS_NAME', plugin_basename(__FILE__));
+
+// Load translation
+		
+function webkimaElementsI18n() {
+		load_plugin_textdomain( 'webkima-elements' );
+	}
+    add_action( 'init', 'webkimaElementsI18n' );
+
+
+    // Localization
+add_action('init', 'localizationWebkimaElements');
+function localizationWebkimaElements() {
+    $path = dirname(plugin_basename( __FILE__ )) . '/languages/';
+    $loaded = load_plugin_textdomain( 'webkima-elements', false, $path);
+    if ($_GET['page'] == basename(__FILE__) && !$loaded) {          
+        echo '<div class="error">Sample Localization: ' . __('Could not load the localization file: ' . $path, 'webkima-elements') . '</div>';
+        return;
+    } 
+} 
 
 use WebkimaElements\Base\Activate;
 use WebkimaElements\Base\Deactivate;

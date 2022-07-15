@@ -8,7 +8,7 @@ class Admin
     {
         add_menu_page(
             'Webkima Elements',
-            'وبکیما المنت',
+            __( 'Webkima Elements', 'webkima-elements' ),
             'manage_options',
             'webkima_elements',
             array('WebkimaElements\Pages\Admin', 'admin_index'),

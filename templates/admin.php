@@ -1,1 +1,3 @@
-<h1>Webkima Elements</h1>
+
+<?php
+echo '<h1>'. __( 'Webkima Elements', 'webkima-elements' ) .'</h1>';

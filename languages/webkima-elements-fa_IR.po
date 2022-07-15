@@ -1,0 +1,42 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Webkima Elements\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-15 16:52+0000\n"
+"PO-Revision-Date: 2022-07-15 16:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: فارسی\n"
+"Language: fa_IR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.2; wp-6.0.1\n"
+"X-Domain: webkima-elements"
+
+#. Description of the plugin
+msgid ""
+"A very light plugin for Persianization and installation of Persian fonts on "
+"the free and Pro Elementor plugin"
+msgstr ""
+"یک افزونه کاملا سبک برای فارسی سازی و نصب فونت های فارسی روی افزونه المنتور "
+"رایگان و پرو"
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://webkima.com/"
+msgstr ""
+
+#: inc/Base/SettingsLinks.php:16
+msgid "Settings"
+msgstr "تنظیمات"
+
+#. Author of the plugin
+msgid "Webkima Academy"
+msgstr "آکادمی وبکیما"
+
+#. Name of the plugin
+#: templates/admin.php:1 inc/Pages/Admin.php:11
+msgid "Webkima Elements"
+msgstr "وبکیما المنت"

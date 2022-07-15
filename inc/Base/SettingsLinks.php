@@ -13,7 +13,7 @@ class SettingsLinks
 
     public function settings_links($links)
     {
-        $setting_links = '<a href="admin.php?page=webkima_elements">Settings</a>';
+        $setting_links = '<a href="admin.php?page=webkima_elements">'.__( 'Settings', 'webkima-elements' ).'</a>';
         array_push($links, $setting_links);
         return $links;
     }
