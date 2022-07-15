@@ -15,11 +15,11 @@
  */
 
 if (!defined('ABSPATH')) {
-    die('You Can Not Access This File Directly!'); // Die if accessed directly
+  die('You Can Not Access This File Directly!'); // Die if accessed directly
 }
 
 if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
-    require_once dirname(__FILE__) . '/vendor/autoload.php';
+  require_once dirname(__FILE__) . '/vendor/autoload.php';
 }
 
 // Define CONSTANTS
@@ -28,23 +28,26 @@ define('WEBKIMA_ELEMENTS_PATH', plugin_dir_path(__FILE__));
 define('WEBKIMA_ELEMENTS_NAME', plugin_basename(__FILE__));
 
 // Load translation
-		
-function webkimaElementsI18n() {
-		load_plugin_textdomain( 'webkima-elements' );
-	}
-    add_action( 'init', 'webkimaElementsI18n' );
 
+function webkimaElementsI18n()
+{
+  load_plugin_textdomain('webkima-elements');
+}
+add_action('init', 'webkimaElementsI18n');
 
-    // Localization
+// Localization
 add_action('init', 'localizationWebkimaElements');
-function localizationWebkimaElements() {
-    $path = dirname(plugin_basename( __FILE__ )) . '/languages/';
-    $loaded = load_plugin_textdomain( 'webkima-elements', false, $path);
-    if ($_GET['page'] == basename(__FILE__) && !$loaded) {          
-        echo '<div class="error">Sample Localization: ' . __('Could not load the localization file: ' . $path, 'webkima-elements') . '</div>';
-        return;
-    } 
-} 
+function localizationWebkimaElements()
+{
+  $path = dirname(plugin_basename(__FILE__)) . '/languages/';
+  $loaded = load_plugin_textdomain('webkima-elements', false, $path);
+  if ($_GET['page'] == basename(__FILE__) && !$loaded) {
+    echo '<div class="error">Sample Localization: ' .
+      __('Could not load the localization file: ' . $path, 'webkima-elements') .
+      '</div>';
+    return;
+  }
+}
 
 use WebkimaElements\Base\Activate;
 use WebkimaElements\Base\Deactivate;
@@ -52,18 +55,18 @@ use WebkimaElements\Base\Deactivate;
 /*
  * The code that runs during plugin activation
  */
-function activate_webkima_elements() 
+function activate_webkima_elements()
 {
-    Activate::activate();
+  Activate::activate();
 }
 register_activation_hook(__FILE__, 'activate_webkima_elements');
 
 /*
  * The code that runs during plugin deactivation
-*/
+ */
 function deactivate_webkima_elements()
 {
-    Deactivate::deactivate();
+  Deactivate::deactivate();
 }
 register_deactivation_hook(__FILE__, 'deactivate_webkima_elements');
 
@@ -71,5 +74,5 @@ register_deactivation_hook(__FILE__, 'deactivate_webkima_elements');
  * The code that runs during plugin Services
  */
 if (class_exists('WebkimaElements\\Init')) {
-    WebkimaElements\Init::register_services();
+  WebkimaElements\Init::register_services();
 }
