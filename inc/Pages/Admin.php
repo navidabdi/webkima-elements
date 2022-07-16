@@ -66,15 +66,13 @@ class Admin extends BaseController
 
   public function setSettings()
   {
-    $args = [];
-
-    foreach ($this->managers as $key => $value) {
-      $args[] = [
+    $args = [
+      [
         'option_group' => 'webkima_elements_settings',
-        'option_name' => $key,
+        'option_name' => 'webkima_elements',
         'callback' => [$this->callbacks_mngr, 'checkboxSanitize'],
-      ];
-    }
+      ],
+    ];
 
     $this->settings->setSettings($args);
   }
@@ -105,6 +103,7 @@ class Admin extends BaseController
         'page' => 'webkima_elements',
         'section' => 'webkima_elements_admin_index',
         'args' => [
+          'option_name' => 'webkima_elements',
           'label_for' => $key,
           'class' => 'ui-toggle',
         ],
