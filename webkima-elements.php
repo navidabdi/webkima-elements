@@ -26,12 +26,13 @@ if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
 define('WEBKIMA_ELEMENTS_URL', plugin_dir_url(__FILE__));
 define('WEBKIMA_ELEMENTS_PATH', plugin_dir_path(__FILE__));
 define('WEBKIMA_ELEMENTS_NAME', plugin_basename(__FILE__));
+define('WEBKIMA_ELEMENTS_TEXT_DOMAIN', 'webkima-elements');
 
 // Load translation
 
 function webkimaElementsI18n()
 {
-  load_plugin_textdomain('webkima-elements');
+  load_plugin_textdomain(WEBKIMA_ELEMENTS_TEXT_DOMAIN);
 }
 add_action('init', 'webkimaElementsI18n');
 
@@ -40,10 +41,14 @@ add_action('init', 'localizationWebkimaElements');
 function localizationWebkimaElements()
 {
   $path = dirname(plugin_basename(__FILE__)) . '/languages/';
-  $loaded = load_plugin_textdomain('webkima-elements', false, $path);
-  if ($_GET['page'] == basename(__FILE__) && !$loaded) {
+  $loaded = load_plugin_textdomain(WEBKIMA_ELEMENTS_TEXT_DOMAIN, false, $path);
+
+  if (isset($_GET['page']) && $_GET['page'] == basename(__FILE__) && !$loaded) {
     echo '<div class="error">Sample Localization: ' .
-      __('Could not load the localization file: ' . $path, 'webkima-elements') .
+      __(
+        'Could not load the localization file: ' . $path,
+        WEBKIMA_ELEMENTS_TEXT_DOMAIN
+      ) .
       '</div>';
     return;
   }

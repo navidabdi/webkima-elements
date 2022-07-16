@@ -20,8 +20,8 @@ class Admin
 
     $this->pages = [
       [
-        'page_title' => __('Webkima Elements', 'webkima-elements'),
-        'menu_title' => __('Webkima Elements', 'webkima-elements'),
+        'page_title' => 'Webkima Elements',
+        'menu_title' => 'Webkima Elements',
         'capability' => 'manage_options',
         'menu_slug' => 'webkima_elements',
         'callback' => function () {
@@ -29,6 +29,19 @@ class Admin
         },
         'icon_url' => WEBKIMA_ELEMENTS_URL . 'assets/icons/webkima-logo.svg',
         'position' => 50,
+      ],
+    ];
+
+    $this->subpages = [
+      [
+        'parent_slug' => 'webkima_elements',
+        'page_title' => 'Custom Post Types',
+        'menu_title' => 'CPT',
+        'capability' => 'manage_options',
+        'menu_slug' => 'webkima_cpt',
+        'callback' => function () {
+          echo '<h1>CPT Manager</h1>';
+        },
       ],
     ];
   }
