@@ -9,12 +9,14 @@ namespace WebkimaElements\Pages;
 use WebkimaElements\Api\SettingsApi;
 use WebkimaElements\Base\BaseController;
 use WebkimaElements\Api\Callbacks\AdminCallbacks;
+use WebkimaElements\Api\Callbacks\ManagerCallbacks;
 
 class Admin extends BaseController
 {
   public $settings;
 
   public $callbacks;
+  public $callbacks_mngr;
 
   public $pages = [];
 
@@ -25,6 +27,7 @@ class Admin extends BaseController
     $this->settings = new SettingsApi();
 
     $this->callbacks = new AdminCallbacks();
+    $this->callbacks_mngr = new ManagerCallbacks();
 
     $this->setPages();
 
@@ -65,13 +68,14 @@ class Admin extends BaseController
   {
     $args = [
       [
-        'option_group' => 'webkima_elements_options_group',
-        'option_name' => 'text_example',
-        'callback' => [$this->callbacks, 'webkimaElementsOptionsGroup'],
+        'option_group' => 'webkima_elements_settings',
+        'option_name' => 'fonts_manager',
+        'callback' => [$this->callbacks_mngr, 'checkboxSanitize'],
       ],
       [
-        'option_group' => 'webkima_elements_options_group',
-        'option_name' => 'first_name',
+        'option_group' => 'webkima_elements_settings',
+        'option_name' => 'elements_manager',
+        'callback' => [$this->callbacks_mngr, 'checkboxSanitize'],
       ],
     ];
 
@@ -84,7 +88,7 @@ class Admin extends BaseController
       [
         'id' => 'webkima_elements_admin_index',
         'title' => 'Settings',
-        'callback' => [$this->callbacks, 'webkimaElementsAdminSection'],
+        'callback' => [$this->callbacks_mngr, 'adminSectionManager'],
         'page' => 'webkima_elements',
       ],
     ];
@@ -96,25 +100,25 @@ class Admin extends BaseController
   {
     $args = [
       [
-        'id' => 'text_example',
-        'title' => 'Text Example',
-        'callback' => [$this->callbacks, 'webkimaElementsTextExample'],
+        'id' => 'fonts_manager',
+        'title' => 'Activate Fonts',
+        'callback' => [$this->callbacks_mngr, 'checkboxField'],
         'page' => 'webkima_elements',
         'section' => 'webkima_elements_admin_index',
         'args' => [
-          'label_for' => 'text_example',
-          'class' => 'example-class',
+          'label_for' => 'fonts_manager',
+          'class' => 'ui-toggle',
         ],
       ],
       [
-        'id' => 'first_name',
-        'title' => 'First Name',
-        'callback' => [$this->callbacks, 'webkimaElementsFirstName'],
+        'id' => 'elements_manager',
+        'title' => 'Activate Elements',
+        'callback' => [$this->callbacks_mngr, 'checkboxField'],
         'page' => 'webkima_elements',
         'section' => 'webkima_elements_admin_index',
         'args' => [
-          'label_for' => 'first_name',
-          'class' => 'example-class',
+          'label_for' => 'elements_manager',
+          'class' => 'ui-toggle',
         ],
       ],
     ];

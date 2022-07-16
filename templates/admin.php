@@ -21,7 +21,7 @@
 
         <form method="post" action="options.php">
             <?php
-            settings_fields('webkima_elements_options_group');
+            settings_fields('webkima_elements_settings');
             do_settings_sections('webkima_elements');
             submit_button();
             ?>
