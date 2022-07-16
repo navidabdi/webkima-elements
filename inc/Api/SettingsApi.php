@@ -81,7 +81,7 @@ class SettingsApi
     foreach ($this->admin_subpages as $page) {
       add_submenu_page(
         $page['parent_slug'],
-        $page['page_title'],
+        __($page['page_title'], 'webkima-elements'),
         $page['menu_title'],
         $page['capability'],
         $page['menu_slug'],
@@ -126,7 +126,7 @@ class SettingsApi
     foreach ($this->sections as $section) {
       add_settings_section(
         $section['id'],
-        $section['title'],
+        __($section['title'], 'webkima-elements'),
         isset($section['callback']) ? $section['callback'] : '',
         $section['page']
       );
@@ -136,7 +136,7 @@ class SettingsApi
     foreach ($this->fields as $field) {
       add_settings_field(
         $field['id'],
-        $field['title'],
+        __($field['title'], 'webkima-elements'),
         isset($field['callback']) ? $field['callback'] : '',
         $field['page'],
         $field['section'],

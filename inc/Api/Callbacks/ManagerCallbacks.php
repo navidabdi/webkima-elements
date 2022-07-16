@@ -18,7 +18,7 @@ class ManagerCallbacks extends BaseController
   {
     _e(
       'Manage the Features of Webkima Elements Plugin by activating the checkboxes from the following list.',
-      WEBKIMA_ELEMENTS_TEXT_DOMAIN
+      'webkima-elements'
     );
   }
 
