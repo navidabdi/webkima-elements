@@ -1,33 +1,40 @@
 <?php
 
+/**
+ * @package  WebkimaElements
+ */
+
 namespace WebkimaElements\Pages;
-use WebkimaElements\Base\BaseController;
 
-class Admin extends BaseController
+use WebkimaElements\Api\SettingsApi;
+
+class Admin
 {
-  public static function add_admin_pages()
+  public $settings;
+
+  public $pages = [];
+
+  public function __construct()
   {
-    add_menu_page(
-      'Webkima Elements',
-      __('Webkima Elements', 'webkima-elements'),
-      'manage_options',
-      'webkima_elements',
-      ['WebkimaElements\Pages\Admin', 'admin_index'],
-      WEBKIMA_ELEMENTS_URL . 'assets/icons/webkima-logo.svg',
-      59
-    );
+    $this->settings = new SettingsApi();
+
+    $this->pages = [
+      [
+        'page_title' => __('Webkima Elements', 'webkima-elements'),
+        'menu_title' => __('Webkima Elements', 'webkima-elements'),
+        'capability' => 'manage_options',
+        'menu_slug' => 'webkima_elements',
+        'callback' => function () {
+          echo '<h1>' . __('Webkima Elements', 'webkima-elements') . '</h1>';
+        },
+        'icon_url' => WEBKIMA_ELEMENTS_URL . 'assets/icons/webkima-logo.svg',
+        'position' => 50,
+      ],
+    ];
   }
 
-  public static function register()
+  public function register()
   {
-    add_action('admin_menu', [
-      'WebkimaElements\Pages\Admin',
-      'add_admin_pages',
-    ]);
-  }
-
-  public static function admin_index()
-  {
-    require_once $this->plugin_path . 'templates/admin.php';
+    $this->settings->addPages($this->pages)->register();
   }
 }

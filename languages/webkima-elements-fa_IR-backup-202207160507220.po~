@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Webkima Elements\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-15 16:52+0000\n"
-"PO-Revision-Date: 2022-07-16 05:07+0000\n"
+"PO-Revision-Date: 2022-07-15 16:54+0000\n"
 "Last-Translator: \n"
 "Language-Team: فارسی\n"
 "Language: fa_IR\n"
@@ -26,7 +26,7 @@ msgstr ""
 #. URI of the plugin
 #. Author URI of the plugin
 msgid "https://webkima.com/"
-msgstr "https://webkima.com/"
+msgstr ""
 
 #: inc/Base/SettingsLinks.php:16
 msgid "Settings"
