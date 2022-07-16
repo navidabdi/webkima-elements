@@ -35,10 +35,16 @@
 		
 
 		<div id="tab-2" class="tab-pane">
-			<div class="we-container"><h3><?php _e(
-     'About',
+			<div class="we-container">
+        <h3><?php _e('About', 'webkima-elements'); ?></h3>
+   <p><?php _e(
+     'This plugin is developed by Webkima Academy team.
+we wanna add a lot of cool feaure to this plugin as soon as posible.
+Notice: We try our best to keep this plugin as fast as we can.',
      'webkima-elements'
-   ); ?></h3></div>
+   ); ?></p>
+   
+      </div>
 		</div>
 	</div>
 

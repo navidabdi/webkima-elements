@@ -23,9 +23,18 @@ class BaseController
     $this->text_domain = 'webkima-elements';
 
     $this->managers = [
-      'font_backend' => 'Activate Font On WordPress Dashboard',
-      'font_frontend' => 'Activate Font On The Front-End',
-      'font_elementor_editor' => 'Activate Font On Elementor Editor',
+      'font_backend' => __(
+        'Activate Font On WordPress Dashboard',
+        'webkima-elements'
+      ),
+      'font_frontend' => __(
+        'Activate Font On The Front-End',
+        'webkima-elements'
+      ),
+      'font_elementor_editor' => __(
+        'Activate Font On Elementor Editor',
+        'webkima-elements'
+      ),
     ];
   }
 

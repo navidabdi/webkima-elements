@@ -19,7 +19,7 @@ final class Init
       Pages\Admin::class,
       Base\Enqueue::class,
       Base\SettingsLinks::class,
-      ElementorFunc\EditorFonts::class,
+      // ElementorFunc\EditorFonts::class,
     ];
   }
 

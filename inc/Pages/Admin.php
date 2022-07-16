@@ -54,7 +54,7 @@ class Admin extends BaseController
         'menu_slug' => 'webkima_elements',
         'callback' => [$this->callbacks, 'adminDashboard'],
         'icon_url' => WEBKIMA_ELEMENTS_URL . 'assets/icons/webkima-logo.svg',
-        'position' => 50,
+        'position' => 58,
       ],
     ];
   }

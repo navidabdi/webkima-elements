@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Webkima Elements\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-15 16:52+0000\n"
-"PO-Revision-Date: 2022-07-16 12:13+0000\n"
+"PO-Revision-Date: 2022-07-16 16:31+0000\n"
 "Last-Translator: \n"
 "Language-Team: فارسی\n"
 "Language: fa_IR\n"
@@ -23,17 +23,21 @@ msgstr ""
 "یک افزونه کاملا سبک برای فارسی سازی و نصب فونت های فارسی روی افزونه المنتور "
 "رایگان و پرو"
 
-#: templates/admin.php:18
+#: templates/admin.php:18 templates/admin.php:39
 msgid "About"
 msgstr "درباره افزونه"
 
-#: inc/Pages/Admin.php:115
-msgid "Activate Elements"
-msgstr "فعال سازی المان های المنتور"
+#: inc/Base/BaseController.php:34
+msgid "Activate Font On Elementor Editor"
+msgstr "فعال‌سازی فونت فارسی در ویرایشگر المنتور"
 
-#: inc/Pages/Admin.php:104
-msgid "Activate Fonts"
-msgstr "فعال سازی فونت ها روی سایت"
+#: inc/Base/BaseController.php:30
+msgid "Activate Font On The Front-End"
+msgstr "فعال‌سازی فونت فارسی در بخش دیداری سایت"
+
+#: inc/Base/BaseController.php:26
+msgid "Activate Font On WordPress Dashboard"
+msgstr "فعال‌سازی فونت فارسی در داشبورد وردپرس"
 
 #. URI of the plugin
 #. Author URI of the plugin
@@ -42,23 +46,29 @@ msgstr "https://webkima.com/"
 
 #: templates/admin.php:13
 msgid "Manage Settings"
-msgstr "مدیریت تنظیمات"
+msgstr "تنظیمات"
 
-#: inc/Api/Callbacks/ManagerCallbacks.php:19
+#: inc/Api/Callbacks/ManagerCallbacks.php:24
 msgid ""
 "Manage the Features of Webkima Elements Plugin by activating the checkboxes "
 "from the following list."
 msgstr ""
-"با فعال کردن چک باکس های لیست زیر، ویژگی های افزونه وبکیما المنت را مدیریت "
-"کنید."
+"با فعال کردن چک باکس های زیر، ویژگی های افزونه وبکیما المنت را مدیریت کنید."
 
-#: inc/Pages/Admin.php:90 inc/Base/SettingsLinks.php:23
+#: inc/Pages/Admin.php:85 inc/Base/SettingsLinks.php:23
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: templates/admin.php:17
-msgid "Updates"
-msgstr "آپدیت"
+#: templates/admin.php:40
+msgid ""
+"This plugin is developed by Webkima Academy team.\n"
+"we wanna add a lot of cool feaure to this plugin as soon as posible.\n"
+"Notice: We try our best to keep this plugin as fast as we can."
+msgstr ""
+"این افزونه توسط تیم آکادمی وبکیما توسعه داده شده است.\n"
+"ما می خواهیم در اسرع وقت ویژگی های جالب زیادی را به این افزونه اضافه کنیم.\n"
+"توجه: ما تمام تلاش خود را می کنیم تا این افزونه را تا جایی که می توانیم سریع "
+"نگه داریم."
 
 #. Author of the plugin
 msgid "Webkima Academy"

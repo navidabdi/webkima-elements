@@ -69,8 +69,8 @@ class SettingsApi
   {
     foreach ($this->admin_pages as $page) {
       add_menu_page(
-        __($page['page_title'], WEBKIMA_ELEMENTS_TEXT_DOMAIN),
-        __($page['menu_title'], WEBKIMA_ELEMENTS_TEXT_DOMAIN),
+        __($page['page_title'], 'webkima-elements'),
+        __($page['menu_title'], 'webkima-elements'),
         $page['capability'],
         $page['menu_slug'],
         $page['callback'],

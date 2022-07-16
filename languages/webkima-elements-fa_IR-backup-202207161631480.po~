@@ -1,14 +1,13 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Webkima Elements\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-16 16:30+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: \n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"POT-Creation-Date: 2022-07-15 16:52+0000\n"
+"PO-Revision-Date: 2022-07-16 16:26+0000\n"
+"Last-Translator: \n"
+"Language-Team: فارسی\n"
+"Language: fa_IR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,54 +20,50 @@ msgid ""
 "A very light plugin for Persianization and installation of Persian fonts on "
 "the free and Pro Elementor plugin"
 msgstr ""
+"یک افزونه کاملا سبک برای فارسی سازی و نصب فونت های فارسی روی افزونه المنتور "
+"رایگان و پرو"
 
-#: templates/admin.php:18 templates/admin.php:39
+#: templates/admin.php:18 templates/admin.php:38
 msgid "About"
-msgstr ""
+msgstr "درباره افزونه"
 
 #: inc/Base/BaseController.php:34
 msgid "Activate Font On Elementor Editor"
-msgstr ""
+msgstr "فعال‌سازی فونت فارسی در ویرایشگر المنتور"
 
 #: inc/Base/BaseController.php:30
 msgid "Activate Font On The Front-End"
-msgstr ""
+msgstr "فعال‌سازی فونت فارسی در بخش دیداری سایت"
 
 #: inc/Base/BaseController.php:26
 msgid "Activate Font On WordPress Dashboard"
-msgstr ""
+msgstr "فعال‌سازی فونت فارسی در داشبورد وردپرس"
 
 #. URI of the plugin
 #. Author URI of the plugin
 msgid "https://webkima.com/"
-msgstr ""
+msgstr "https://webkima.com/"
 
 #: templates/admin.php:13
 msgid "Manage Settings"
-msgstr ""
+msgstr "تنظیمات"
 
 #: inc/Api/Callbacks/ManagerCallbacks.php:24
 msgid ""
 "Manage the Features of Webkima Elements Plugin by activating the checkboxes "
 "from the following list."
 msgstr ""
+"با فعال کردن چک باکس های زیر، ویژگی های افزونه وبکیما المنت را مدیریت کنید."
 
 #: inc/Pages/Admin.php:85 inc/Base/SettingsLinks.php:23
 msgid "Settings"
-msgstr ""
-
-#: templates/admin.php:40
-msgid ""
-"This plugin is developed by Webkima Academy team.\n"
-"we wanna add a lot of cool feaure to this plugin as soon as posible.\n"
-"Notice: We try our best to keep this plugin as fast as we can."
-msgstr ""
+msgstr "تنظیمات"
 
 #. Author of the plugin
 msgid "Webkima Academy"
-msgstr ""
+msgstr "آکادمی وبکیما"
 
 #. Name of the plugin
 #: templates/admin.php:8
 msgid "Webkima Elements"
-msgstr ""
+msgstr "وبکیما المنت"

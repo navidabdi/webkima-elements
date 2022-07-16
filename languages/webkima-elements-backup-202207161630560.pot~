@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Webkima Elements\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-16 09:12+0000\n"
+"POT-Creation-Date: 2022-07-16 16:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -22,12 +22,38 @@ msgid ""
 "the free and Pro Elementor plugin"
 msgstr ""
 
+#: templates/admin.php:18 templates/admin.php:38
+msgid "About"
+msgstr ""
+
+#: inc/Base/BaseController.php:34
+msgid "Activate Font On Elementor Editor"
+msgstr ""
+
+#: inc/Base/BaseController.php:30
+msgid "Activate Font On The Front-End"
+msgstr ""
+
+#: inc/Base/BaseController.php:26
+msgid "Activate Font On WordPress Dashboard"
+msgstr ""
+
 #. URI of the plugin
 #. Author URI of the plugin
 msgid "https://webkima.com/"
 msgstr ""
 
-#: inc/Base/SettingsLinks.php:16
+#: templates/admin.php:13
+msgid "Manage Settings"
+msgstr ""
+
+#: inc/Api/Callbacks/ManagerCallbacks.php:24
+msgid ""
+"Manage the Features of Webkima Elements Plugin by activating the checkboxes "
+"from the following list."
+msgstr ""
+
+#: inc/Pages/Admin.php:85 inc/Base/SettingsLinks.php:23
 msgid "Settings"
 msgstr ""
 
@@ -36,10 +62,6 @@ msgid "Webkima Academy"
 msgstr ""
 
 #. Name of the plugin
-#: templates/admin.php:1 inc/Pages/Admin.php:11
+#: templates/admin.php:8
 msgid "Webkima Elements"
-msgstr ""
-
-msgctxt "تنظیمات"
-msgid "Error, duplicate 1: Settings"
 msgstr ""
