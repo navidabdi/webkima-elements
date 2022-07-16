@@ -17,6 +17,17 @@ class Enqueue extends BaseController
     if ($this->activated('font_frontend')) {
       add_action('wp_enqueue_scripts', [$this, 'enqueueIranYekanFont']);
     }
+    if ($this->activated('font_elementor_editor')) {
+      add_action('elementor/editor/before_enqueue_scripts', [
+        $this,
+        'enqueueElementorEditor',
+      ]);
+      add_action('elementor/app/init', [$this, 'enqueueElementorEditor']);
+      add_action('elementor/preview/enqueue_styles', [
+        $this,
+        'enqueueElementorEditor',
+      ]);
+    }
     add_action('admin_enqueue_scripts', [$this, 'enqueueAdminCssAndJs']);
   }
 
@@ -45,6 +56,14 @@ class Enqueue extends BaseController
     wp_enqueue_style(
       'webkima-elements-vazir-font',
       $this->plugin_url . 'assets/css/vazir-font.css'
+    );
+  }
+
+  public function enqueueElementorEditor()
+  {
+    wp_enqueue_style(
+      'webkima-elements-elementor-editor',
+      $this->plugin_url . 'assets/css/elementor-editor.css'
     );
   }
 }

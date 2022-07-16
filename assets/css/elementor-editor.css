@@ -1,0 +1,14 @@
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/IranYekan/iranyekanwebregularfanum.woff') format('woff');
+}
+body,
+button,
+a,
+p,
+.elementor-panel,
+.eps-app {
+  font-family: 'iranyekan', sans-serif !important;
+}
