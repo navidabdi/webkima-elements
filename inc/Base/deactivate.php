@@ -1,11 +1,15 @@
 <?php
 
+/**
+ * @package  WebkimaElements
+ */
+
 namespace WebkimaElements\Base;
 
 class Deactivate
 {
-    public static function deactivate()
-    {
-        flush_rewrite_rules();
-    }
+  public static function deactivate()
+  {
+    flush_rewrite_rules();
+  }
 }

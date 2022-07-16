@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @package  WebkimaElements
+ */
+
 namespace WebkimaElements\Base;
 
 class BaseController

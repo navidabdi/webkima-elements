@@ -1,6 +1,10 @@
 <?php
 
 /**
+ * @package  WebkimaElements
+ */
+
+/**
  * Plugin Name: Webkima Elements
  * Plugin URI: https://webkima.com/
  * Description: A very light plugin for Persianization and installation of Persian fonts on the free and Pro Elementor plugin
