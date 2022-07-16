@@ -66,18 +66,15 @@ class Admin extends BaseController
 
   public function setSettings()
   {
-    $args = [
-      [
+    $args = [];
+
+    foreach ($this->managers as $key => $value) {
+      $args[] = [
         'option_group' => 'webkima_elements_settings',
-        'option_name' => 'fonts_manager',
+        'option_name' => $key,
         'callback' => [$this->callbacks_mngr, 'checkboxSanitize'],
-      ],
-      [
-        'option_group' => 'webkima_elements_settings',
-        'option_name' => 'elements_manager',
-        'callback' => [$this->callbacks_mngr, 'checkboxSanitize'],
-      ],
-    ];
+      ];
+    }
 
     $this->settings->setSettings($args);
   }
@@ -98,30 +95,21 @@ class Admin extends BaseController
 
   public function setFields()
   {
-    $args = [
-      [
-        'id' => 'fonts_manager',
-        'title' => 'Activate Fonts',
+    $args = [];
+
+    foreach ($this->managers as $key => $value) {
+      $args[] = [
+        'id' => $key,
+        'title' => $value,
         'callback' => [$this->callbacks_mngr, 'checkboxField'],
         'page' => 'webkima_elements',
         'section' => 'webkima_elements_admin_index',
         'args' => [
-          'label_for' => 'fonts_manager',
+          'label_for' => $key,
           'class' => 'ui-toggle',
         ],
-      ],
-      [
-        'id' => 'elements_manager',
-        'title' => 'Activate Elements',
-        'callback' => [$this->callbacks_mngr, 'checkboxField'],
-        'page' => 'webkima_elements',
-        'section' => 'webkima_elements_admin_index',
-        'args' => [
-          'label_for' => 'elements_manager',
-          'class' => 'ui-toggle',
-        ],
-      ],
-    ];
+      ];
+    }
 
     $this->settings->setFields($args);
   }
