@@ -30,6 +30,10 @@ class Admin extends BaseController
 
     $this->setSubpages();
 
+    $this->setSettings();
+    $this->setSections();
+    $this->setFields();
+
     $this->settings
       ->addPages($this->pages)
       ->withSubPage('Dashboard')
@@ -55,5 +59,66 @@ class Admin extends BaseController
   public function setSubpages()
   {
     $this->subpages = [];
+  }
+
+  public function setSettings()
+  {
+    $args = [
+      [
+        'option_group' => 'webkima_elements_options_group',
+        'option_name' => 'text_example',
+        'callback' => [$this->callbacks, 'webkimaElementsOptionsGroup'],
+      ],
+      [
+        'option_group' => 'webkima_elements_options_group',
+        'option_name' => 'first_name',
+      ],
+    ];
+
+    $this->settings->setSettings($args);
+  }
+
+  public function setSections()
+  {
+    $args = [
+      [
+        'id' => 'webkima_elements_admin_index',
+        'title' => 'Settings',
+        'callback' => [$this->callbacks, 'webkimaElementsAdminSection'],
+        'page' => 'webkima_elements',
+      ],
+    ];
+
+    $this->settings->setSections($args);
+  }
+
+  public function setFields()
+  {
+    $args = [
+      [
+        'id' => 'text_example',
+        'title' => 'Text Example',
+        'callback' => [$this->callbacks, 'webkimaElementsTextExample'],
+        'page' => 'webkima_elements',
+        'section' => 'webkima_elements_admin_index',
+        'args' => [
+          'label_for' => 'text_example',
+          'class' => 'example-class',
+        ],
+      ],
+      [
+        'id' => 'first_name',
+        'title' => 'First Name',
+        'callback' => [$this->callbacks, 'webkimaElementsFirstName'],
+        'page' => 'webkima_elements',
+        'section' => 'webkima_elements_admin_index',
+        'args' => [
+          'label_for' => 'first_name',
+          'class' => 'example-class',
+        ],
+      ],
+    ];
+
+    $this->settings->setFields($args);
   }
 }
