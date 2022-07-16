@@ -23,8 +23,16 @@ class BaseController
     $this->text_domain = 'webkima-elements';
 
     $this->managers = [
-      'fonts_manager' => 'Activate Fonts',
-      'elements_manager' => 'Activate Elements',
+      'font_backend' => 'Activate Font On WordPress Dashboard',
+      'font_frontend' => 'Activate Font On The Front-End',
+      'font_elementor_editor' => 'Activate Font On Elementor Editor',
     ];
+  }
+
+  public function activated(string $key)
+  {
+    $option = get_option('webkima_elements');
+
+    return isset($option[$key]) ? $option[$key] : false;
   }
 }

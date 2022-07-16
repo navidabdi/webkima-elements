@@ -5,27 +5,46 @@
  */
 
 namespace WebkimaElements\Base;
+use WebkimaElements\Base\BaseController;
 
-class Enqueue
+class Enqueue extends BaseController
 {
   public function register()
   {
-    add_action('admin_enqueue_scripts', [$this, 'enqueue']);
+    if ($this->activated('font_backend')) {
+      add_action('admin_enqueue_scripts', [$this, 'enqueueIranYekanFont']);
+    }
+    if ($this->activated('font_frontend')) {
+      add_action('wp_enqueue_scripts', [$this, 'enqueueIranYekanFont']);
+    }
+    add_action('admin_enqueue_scripts', [$this, 'enqueueAdminCssAndJs']);
   }
 
-  public function enqueue()
+  public function enqueueAdminCssAndJs()
   {
     wp_enqueue_style(
-      'webkima-elements',
-      WEBKIMA_ELEMENTS_URL . 'assets/css/admin-css.css'
-    );
-    wp_enqueue_style(
-      'webkima-elements',
-      WEBKIMA_ELEMENTS_URL . 'assets/css/vazir-font.css'
+      'webkima-elements-admin-css',
+      $this->plugin_url . 'assets/css/admin-css.css'
     );
     wp_enqueue_script(
-      'webkima-elements',
-      WEBKIMA_ELEMENTS_URL . 'assets/js/admin-js.js'
+      'webkima-elements-admin-js',
+      $this->plugin_url . 'assets/js/admin-js.js'
+    );
+  }
+
+  public function enqueueIranYekanFont()
+  {
+    wp_enqueue_style(
+      'webkima-elements-iranyekan-font',
+      $this->plugin_url . 'assets/css/iranyekan-font.css'
+    );
+  }
+
+  public function enqueueVazirFont()
+  {
+    wp_enqueue_style(
+      'webkima-elements-vazir-font',
+      $this->plugin_url . 'assets/css/vazir-font.css'
     );
   }
 }
