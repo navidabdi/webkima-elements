@@ -29,13 +29,16 @@ class ManagerCallbacks extends BaseController
 
   public function checkboxField($args)
   {
-    // @ on @$checkbox[$name] => This is just for the time that plugin is just installed and yet there is no data saved on the database
-
     $name = $args['label_for'];
-
     $classes = $args['class'];
     $option_name = $args['option_name'];
     $checkbox = get_option($option_name);
+    $checked = isset($checkbox[$name])
+      ? ($checkbox[$name]
+        ? true
+        : false)
+      : false;
+
     echo '<div class="' .
       $classes .
       '"><input type="checkbox" id="' .
@@ -45,7 +48,7 @@ class ManagerCallbacks extends BaseController
       '[' .
       $name .
       ']" value="1" class="" ' .
-      (@$checkbox[$name] ? 'checked' : '') .
+      ($checked ? 'checked' : '') .
       '><label for="' .
       $name .
       '"><div></div></label></div>';
