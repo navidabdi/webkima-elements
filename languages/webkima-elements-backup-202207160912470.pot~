@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Webkima Elements\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-16 09:12+0000\n"
+"POT-Creation-Date: 2022-07-15 16:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -38,8 +38,4 @@ msgstr ""
 #. Name of the plugin
 #: templates/admin.php:1 inc/Pages/Admin.php:11
 msgid "Webkima Elements"
-msgstr ""
-
-msgctxt "تنظیمات"
-msgid "Error, duplicate 1: Settings"
 msgstr ""

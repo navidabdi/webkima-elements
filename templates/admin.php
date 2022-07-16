@@ -10,9 +10,18 @@
 	<?php settings_errors(); ?>
 
     <ul class="nav nav-tabs">
-		<li class="active"><a href="#tab-1">Manage Settings</a></li>
-		<li><a href="#tab-2">Updates</a></li>
-		<li><a href="#tab-3">About</a></li>
+		<li class="active"><a href="#tab-1"><?php _e(
+    'Manage Settings',
+    WEBKIMA_ELEMENTS_TEXT_DOMAIN
+  ); ?></a></li>
+		<li><a href="#tab-2"><?php _e(
+    'Updates',
+    WEBKIMA_ELEMENTS_TEXT_DOMAIN
+  ); ?></a></li>
+		<li><a href="#tab-3"><?php _e(
+    'About',
+    WEBKIMA_ELEMENTS_TEXT_DOMAIN
+  ); ?></a></li>
 	</ul>
 
 

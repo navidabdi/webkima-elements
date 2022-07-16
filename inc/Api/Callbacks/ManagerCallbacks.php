@@ -16,7 +16,10 @@ class ManagerCallbacks extends BaseController
 
   public function adminSectionManager()
   {
-    echo 'Manage the Sections and Features of this Plugin by activating the checkboxes from the following list.';
+    _e(
+      'Manage the Features of Webkima Elements Plugin by activating the checkboxes from the following list.',
+      WEBKIMA_ELEMENTS_TEXT_DOMAIN
+    );
   }
 
   public function checkboxField($args)

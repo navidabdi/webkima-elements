@@ -87,7 +87,7 @@ class Admin extends BaseController
     $args = [
       [
         'id' => 'webkima_elements_admin_index',
-        'title' => 'Settings',
+        'title' => __('Settings', WEBKIMA_ELEMENTS_TEXT_DOMAIN),
         'callback' => [$this->callbacks_mngr, 'adminSectionManager'],
         'page' => 'webkima_elements',
       ],
@@ -101,7 +101,7 @@ class Admin extends BaseController
     $args = [
       [
         'id' => 'fonts_manager',
-        'title' => 'Activate Fonts',
+        'title' => __('Activate Fonts', WEBKIMA_ELEMENTS_TEXT_DOMAIN),
         'callback' => [$this->callbacks_mngr, 'checkboxField'],
         'page' => 'webkima_elements',
         'section' => 'webkima_elements_admin_index',
@@ -112,7 +112,7 @@ class Admin extends BaseController
       ],
       [
         'id' => 'elements_manager',
-        'title' => 'Activate Elements',
+        'title' => __('Activate Elements', WEBKIMA_ELEMENTS_TEXT_DOMAIN),
         'callback' => [$this->callbacks_mngr, 'checkboxField'],
         'page' => 'webkima_elements',
         'section' => 'webkima_elements_admin_index',
