@@ -22,8 +22,8 @@ if (!defined('ABSPATH')) {
   die('You Can Not Access This File Directly!'); // Die if accessed directly
 }
 
-if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
-  require_once dirname(__FILE__) . '/vendor/autoload.php';
+if (file_exists(dirname(__FILE__) . '/we-autoloader/autoload.php')) {
+  require_once dirname(__FILE__) . '/we-autoloader/autoload.php';
 }
 
 // Define CONSTANTS
@@ -55,15 +55,12 @@ function localizationWebkimaElements()
   }
 }
 
-use WebkimaElements\Base\Activate;
-use WebkimaElements\Base\Deactivate;
-
 /*
  * The code that runs during plugin activation
  */
 function activate_webkima_elements()
 {
-  Activate::activate();
+  WebkimaElements\Base\Activate::activate();
 }
 register_activation_hook(__FILE__, 'activate_webkima_elements');
 
@@ -72,7 +69,7 @@ register_activation_hook(__FILE__, 'activate_webkima_elements');
  */
 function deactivate_webkima_elements()
 {
-  Deactivate::deactivate();
+  WebkimaElements\Base\Deactivate::deactivate();
 }
 register_deactivation_hook(__FILE__, 'deactivate_webkima_elements');
 
