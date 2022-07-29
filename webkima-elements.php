@@ -19,7 +19,7 @@
  */
 
 if (!defined('ABSPATH')) {
-  die('You Can Not Access This File Directly!'); // Die if accessed directly
+  die('You Can Not Access This File Directly!'); // Die if accessed directlyf
 }
 
 if (file_exists(dirname(__FILE__) . '/we-autoloader/autoload.php')) {
