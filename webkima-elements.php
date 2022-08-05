@@ -31,6 +31,7 @@ define('WEBKIMA_ELEMENTS_URL', plugin_dir_url(__FILE__));
 define('WEBKIMA_ELEMENTS_PATH', plugin_dir_path(__FILE__));
 define('WEBKIMA_ELEMENTS_NAME', plugin_basename(__FILE__));
 define('WEBKIMA_ELEMENTS_TEXT_DOMAIN', 'webkima-elements');
+define('WEBKIMA_ELEMENTS_VER', '1.0.0');
 
 // Load translation
 
@@ -79,3 +80,4 @@ register_deactivation_hook(__FILE__, 'deactivate_webkima_elements');
 if (class_exists('WebkimaElements\\Init')) {
   WebkimaElements\Init::register_services();
 }
+

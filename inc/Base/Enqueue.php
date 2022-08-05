@@ -11,59 +11,68 @@ class Enqueue extends BaseController
 {
   public function register()
   {
-    if ($this->activated('font_backend')) {
-      add_action('admin_enqueue_scripts', [$this, 'enqueueIranYekanFont']);
+    add_action("admin_enqueue_scripts", [$this, "enqueueOptionsStyle"]);
+
+    if ($this->activated("we_font_backend")) {
+      add_action("admin_enqueue_scripts", [$this, "enqueueIranYekanFont"]);
     }
-    if ($this->activated('font_frontend')) {
-      add_action('wp_enqueue_scripts', [$this, 'enqueueIranYekanFont']);
+    if ($this->activated("we_font_frontend")) {
+      add_action("wp_enqueue_scripts", [$this, "enqueueIranYekanFont"]);
     }
-    if ($this->activated('font_elementor_editor')) {
-      add_action('elementor/editor/before_enqueue_scripts', [
+    if ($this->activated("we_font_elementor_editor")) {
+      add_action("elementor/editor/before_enqueue_scripts", [
         $this,
-        'enqueueElementorEditor',
+        "enqueueElementorEditor",
       ]);
-      add_action('elementor/app/init', [$this, 'enqueueElementorEditor']);
-      add_action('elementor/preview/enqueue_styles', [
+      add_action("elementor/app/init", [$this, "enqueueElementorEditor"]);
+      add_action("elementor/preview/enqueue_styles", [
         $this,
-        'enqueueElementorEditor',
+        "enqueueElementorEditor",
       ]);
     }
-    add_action('admin_enqueue_scripts', [$this, 'enqueueAdminCssAndJs']);
+    add_action("admin_enqueue_scripts", [$this, "enqueueAdminCssAndJs"]);
   }
 
   public function enqueueAdminCssAndJs()
   {
     wp_enqueue_style(
-      'webkima-elements-admin-css',
-      $this->plugin_url . 'assets/css/admin-css.css'
+      "webkima-elements-admin-css",
+      $this->plugin_url . "assets/css/admin-css.css"
     );
     wp_enqueue_script(
-      'webkima-elements-admin-js',
-      $this->plugin_url . 'assets/js/admin-js.js'
+      "webkima-elements-admin-js",
+      $this->plugin_url . "assets/js/admin-js.js"
     );
   }
 
   public function enqueueIranYekanFont()
   {
     wp_enqueue_style(
-      'webkima-elements-iranyekan-font',
-      $this->plugin_url . 'assets/css/iranyekan-font.css'
+      "webkima-elements-iranyekan-font",
+      $this->plugin_url . "assets/css/iranyekan-font.css"
     );
   }
 
   public function enqueueVazirFont()
   {
     wp_enqueue_style(
-      'webkima-elements-vazir-font',
-      $this->plugin_url . 'assets/css/vazir-font.css'
+      "webkima-elements-vazir-font",
+      $this->plugin_url . "assets/css/vazir-font.css"
     );
   }
 
   public function enqueueElementorEditor()
   {
     wp_enqueue_style(
-      'webkima-elements-elementor-editor',
-      $this->plugin_url . 'assets/css/elementor-editor.css'
+      "webkima-elements-elementor-editor",
+      $this->plugin_url . "assets/css/elementor-editor.css"
+    );
+  }
+  public function enqueueOptionsStyle()
+  {
+    wp_enqueue_style(
+      "webkima-elements-options-style",
+      $this->plugin_url . "assets/css/options.css"
     );
   }
 }
