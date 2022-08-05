@@ -53,9 +53,9 @@ class BaseController
     "More feature with better performance",
     "webkima-elements"
   ); ?></div>
-		<a class="wp-badge" href="https://webkima.com/" target="_blank"	style="background-color:#d9edff !important;background-image:url(<?php echo plugins_url(
+		<a class="webkima-logo" href="https://webkima.com/" target="_blank"	style="background-image:url(<?php echo plugins_url(
     "webkima-elements/assets/icons/logo.png"
-  ); ?>) !important;background-position: center center;background-size: 130px auto !important;"></a>
+  ); ?>) !important;background-position: center center;"></a>
 
 		<h2 class="nav-tab-wrapper">
 			<a class="nav-tab nav-tab-active" href="#"><?php echo __(

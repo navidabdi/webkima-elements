@@ -402,3 +402,17 @@
 .csf-field + .csf-field {
   border-top: 1px solid #ecf2ff;
 }
+.webkima-logo {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  width: 160px;
+  height: 50px;
+  background-size: contain !important;
+  background-repeat: no-repeat;
+}
+.webkima-logo:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
