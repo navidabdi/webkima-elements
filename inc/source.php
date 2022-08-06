@@ -4,7 +4,7 @@ class Persian_Elementor_Templates_Source extends
   Elementor\TemplateLibrary\Source_Base
 {
   /**
-   * Template prefix
+   * Template prefixx
    */
   protected $template_prefix = "efa_";
 
