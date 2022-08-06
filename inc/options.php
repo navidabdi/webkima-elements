@@ -18,7 +18,7 @@ require_once WEBKIMA_ELEMENTS_PATH .
 if (class_exists("EFS")) {
   //
   // Set a unique slug-like ID
-  $prefix = "webkima-elements";
+  $prefix = "webkima_elements";
 
   //
   // Create options

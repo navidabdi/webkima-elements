@@ -11,8 +11,7 @@ class Enqueue extends BaseController
 {
   public function register()
   {
-    add_action("admin_enqueue_scripts", [$this, "enqueueOptionsStyle"]);
-
+    // var_dump(get_option("webkima_elements"));
     if ($this->activated("we_font_backend")) {
       add_action("admin_enqueue_scripts", [$this, "enqueueIranYekanFont"]);
     }
@@ -66,13 +65,6 @@ class Enqueue extends BaseController
     wp_enqueue_style(
       "webkima-elements-elementor-editor",
       $this->plugin_url . "assets/css/elementor-editor.css"
-    );
-  }
-  public function enqueueOptionsStyle()
-  {
-    wp_enqueue_style(
-      "webkima-elements-options-style",
-      $this->plugin_url . "assets/css/options.css"
     );
   }
 }
