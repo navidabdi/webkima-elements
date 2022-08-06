@@ -18,7 +18,7 @@ require_once WEBKIMA_ELEMENTS_PATH .
 if (class_exists("EFS")) {
   //
   // Set a unique slug-like ID
-  $prefix = "webkima_elements";
+  $prefix = "webkima-elements";
 
   //
   // Create options
@@ -49,7 +49,7 @@ if (class_exists("EFS")) {
     "show_footer" => false,
     "show_all_options" => true,
     "show_form_warning" => true,
-    "sticky_header" => false,
+    "sticky_header" => true,
     "save_defaults" => true,
     "ajax_save" => true,
 
@@ -58,9 +58,9 @@ if (class_exists("EFS")) {
     "admin_bar_menu_priority" => 80,
 
     // footer
-    "footer_text" => __("Webkima Elements support", "webkima-elements"),
+    "footer_text" => __("Webkima Elements", "webkima-elements"),
     "footer_after" => "",
-    "footer_credit" => "",
+    "footer_credit" => __("Webkima Elements", "webkima-elements"),
 
     // database model
     "database" => "", // options, transient, theme_mod, network

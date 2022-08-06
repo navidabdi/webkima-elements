@@ -765,3 +765,102 @@ msgstr "پر کردن این بخش الزامی است."
 #: inc/codestar-framework/functions/validate.php:146
 msgid "Please enter a valid URL."
 msgstr ""
+
+#. Description of the plugin
+msgid ""
+"A very light plugin for Persianization and installation of Persian fonts on "
+"the free and Pro Elementor plugin"
+msgstr ""
+"افزونه ای بسیار سبک برای فارسی سازی و نصب فونت های فارسی برای افزونه المنتور "
+"رایگان و پولی"
+
+#: inc/options.php:142
+msgid "About"
+msgstr "درباره وبکیما المنت"
+
+#: inc/options.php:131
+msgid "Activate Font On Elementor Editor"
+msgstr "فعال سازی فونت های فارسی در بخش ویرایشگر المنتور"
+
+#: inc/options.php:121
+msgid "Activate Font On The Front-End"
+msgstr "فعال سازی فونت های فارسی در بخش دیداری یا فرانت اند سایت"
+
+#: inc/options.php:108
+msgid "Activate Font On WordPress Dashboard"
+msgstr "فعال سازی فونت های فارسی در بخش داشبورد یا همان پیشخوان سایت"
+
+#: inc/options.php:106 inc/options.php:119 inc/options.php:129
+msgid "active"
+msgstr "فعال"
+
+#: inc/options.php:107 inc/options.php:120 inc/options.php:130
+msgid "deactive"
+msgstr "غیرفعال"
+
+#: inc/options.php:156
+msgid "Developed by Nabi Abdi and Webkima Team."
+msgstr "توسعه داده شده با عشق ❤️ توسط نبی عبدی و تیم آکادمی وبکیما."
+
+#: inc/options.php:128
+msgid "Font On Elementor Editor"
+msgstr "فونت فارسی در المنتور"
+
+#: inc/options.php:118
+msgid "Font On The Front-End"
+msgstr "فونت فارسی در سایت"
+
+#: inc/options.php:105
+msgid "Font On WordPress Dashboard"
+msgstr "فونت فارسی در داشبورد"
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://webkima.com/"
+msgstr ""
+
+#: inc/options.php:92
+msgid "main settings"
+msgstr "تنظیمات اصلی"
+
+#: inc/Base/BaseController.php:52
+msgid "More feature with better performance"
+msgstr "با وبکیما المنت امکانات بیشتر با سرعت بالاتر داشته باشید..."
+
+#: inc/options.php:98
+msgid "plugin version"
+msgstr "نسخه افزونه"
+
+#: inc/Base/BaseController.php:61
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: inc/options.php:147
+msgid ""
+"This plugin is developed by Webkima Academy team.\n"
+"       we wanna add a lot of cool feaure to this plugin as soon as posible.\n"
+"       Notice: We try our best to keep this plugin as fast as we can."
+msgstr ""
+"این افزونه توسط نبی عبدی و تیم آکادمی وبکیما برنامه نویسی و توسعه داده شده "
+"است، بزودی امکانات جالب و زیادی را به این پلاگین اضافه خواهیم کرد.\n"
+"نکته مهم: تمامی تلاش ما این است که این پلاگین هیچ تاثیر منفی در سرعت سایت "
+"شما نداشته باشد و تمامی امکانات با بالاترین سرعت ممکن در سایت شما برای "
+"استفاده قرار گیرند."
+
+#. Author of the plugin
+msgid "Webkima Academy"
+msgstr "آکادمی وبکیما"
+
+#. Name of the plugin
+#: inc/options.php:27 inc/options.php:31 inc/Base/BaseController.php:38
+#: inc/Base/BaseController.php:39
+msgid "Webkima Elements"
+msgstr "وبکیما المنت"
+
+#: inc/options.php:61
+msgid "Webkima Elements support"
+msgstr "پشتیبانی وبکیما المنت"
+
+#: inc/Base/BaseController.php:51
+msgid "Welcome to Webkima Elements :)"
+msgstr "به وبکیما المنت خوش آمدید 👋"
