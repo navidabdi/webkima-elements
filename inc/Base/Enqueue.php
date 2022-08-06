@@ -30,6 +30,11 @@ class Enqueue extends BaseController
         "enqueueElementorEditor",
       ]);
     }
+
+    add_action("elementor/editor/before_enqueue_scripts", [
+      $this,
+      "enqueueWebkimaElementsTemplates",
+    ]);
   }
 
   public function enqueueIranYekanFont()
@@ -53,6 +58,15 @@ class Enqueue extends BaseController
     wp_enqueue_style(
       "webkima-elements-elementor-editor",
       $this->plugin_url . "assets/css/elementor-editor.css"
+    );
+  }
+
+  // Enqueue Template Editor
+  public function enqueueWebkimaElementsTemplates()
+  {
+    wp_enqueue_script(
+      "webkima-elements-template-js",
+      $this->plugin_url . "assets/js/editor.js"
     );
   }
 }

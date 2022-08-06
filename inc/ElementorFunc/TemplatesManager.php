@@ -73,7 +73,7 @@ class TemplatesManager extends BaseController
    */
   public function transient_key()
   {
-    return $this->option . "_" . PERSIAN_ELEMENTOR_VERSION;
+    return $this->option . "_" . WEBKIMA_ELEMENTS_VER;
   }
 
   /**

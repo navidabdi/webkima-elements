@@ -12,7 +12,7 @@
  * Author: Webkima Academy
  * Author URI: https://webkima.com/
  * Text Domain: webkima-elements
- * Domain Path: /languages
+ * Domain Path: /languages3
  * License: GPLv2 or later
  * Elementor tested up to: 3.6.5
  * Elementor Pro tested up to: 3.7.0
@@ -75,5 +75,5 @@ if (class_exists("WebkimaElements\\Init")) {
   WebkimaElements\Init::register_services();
 }
 
-// require_once dirname(__FILE__) . "/inc/source.php";
+// require_once dirname(__FILE__) . "/inc/source.php";ß
 // require_once dirname(__FILE__) . "/inc/module.php";
