@@ -1,9 +1,8 @@
 <?php
-
 /**
- * Define Persian_Elementor_Templates_Manager class
+ * Define TemplatesManager class
  */
-class Persian_Elementor_Templates_Manager
+class TemplatesManager
 {
   /**
    * A reference to an instance of this class.
@@ -14,7 +13,7 @@ class Persian_Elementor_Templates_Manager
   /**
    * Template option name
    */
-  protected $option = "persian_elementor_categories";
+  protected $option = "webkima_elements_categories";
 
   /**
    * Constructor for the class
@@ -45,7 +44,7 @@ class Persian_Elementor_Templates_Manager
     } else {
       add_action(
         "wp_ajax_elementor_get_template_data",
-        [$this, "force_persian_elementor_template_source"],
+        [$this, "force_webkima_elements_template_source"],
         0
       );
     }
@@ -60,7 +59,7 @@ class Persian_Elementor_Templates_Manager
 
     $elementor = Elementor\Plugin::instance();
     $elementor->templates_manager->register_source(
-      "Persian_Elementor_Templates_Source"
+      "Webkima_Elements_Templates_Source"
     );
   }
 
@@ -69,7 +68,7 @@ class Persian_Elementor_Templates_Manager
    */
   public function transient_key()
   {
-    return $this->option . "_" . PERSIAN_ELEMENTOR_VERSION;
+    return $this->option . "_" . WEBKIMA_ELEMENTS_VER;
   }
 
   /**
@@ -92,7 +91,7 @@ class Persian_Elementor_Templates_Manager
    */
   public function remote_get_categories()
   {
-    $url = PERSIAN_ELEMENTOR_URL . "json/categories.json";
+    $url = WEBKIMA_ELEMENTS_URL . "json/categories.json";
     $response = wp_remote_get($url, ["timeout" => 60]);
     $body = wp_remote_retrieve_body($response);
     $body = json_decode($body, true);
@@ -177,7 +176,7 @@ class Persian_Elementor_Templates_Manager
   public function get_efa_template_data($args)
   {
     $source = Elementor\Plugin::instance()->templates_manager->get_source(
-      "persiantemplate"
+      "WebkimaAcademy"
     );
 
     $data = $source->get_data($args);
@@ -188,7 +187,7 @@ class Persian_Elementor_Templates_Manager
   /**
    * Return template data insted of elementor template.
    */
-  public function force_persian_elementor_template_source()
+  public function force_webkima_elements_template_source()
   {
     if (empty($_REQUEST["template_id"])) {
       return;
@@ -198,7 +197,7 @@ class Persian_Elementor_Templates_Manager
       return;
     }
 
-    $_REQUEST["source"] = "persiantemplate";
+    $_REQUEST["source"] = "WebkimaAcademy";
   }
 
   /**
@@ -215,12 +214,12 @@ class Persian_Elementor_Templates_Manager
 }
 
 /**
- * Returns instance of Persian_Elementor_Templates_Manager
+ * Returns instance of TemplatesManager
  *
  * @return object
  */
-function efa_templates_for_elementor_manager_init()
+function manager_init()
 {
-  return Persian_Elementor_Templates_Manager::get_instance();
+  return TemplatesManager::get_instance();
 }
-efa_templates_for_elementor_manager_init()->init();
+manager_init()->init();
