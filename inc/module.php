@@ -56,7 +56,6 @@ class Persian_Elementor_Templates_Manager
    */
   public function register_templates_source()
   {
-    // var_dump(plugin_dir_path(__FILE__) . "source.php");
     require plugin_dir_path(__FILE__) . "source.php";
 
     $elementor = Elementor\Plugin::instance();
@@ -70,7 +69,7 @@ class Persian_Elementor_Templates_Manager
    */
   public function transient_key()
   {
-    return $this->option . "_" . WEBKIMA_ELEMENTS_VER;
+    return $this->option . "_" . PERSIAN_ELEMENTOR_VERSION;
   }
 
   /**
@@ -93,7 +92,7 @@ class Persian_Elementor_Templates_Manager
    */
   public function remote_get_categories()
   {
-    $url = WEBKIMA_ELEMENTS_URL . "json/categories.json";
+    $url = PERSIAN_ELEMENTOR_URL . "json/categories.json";
     $response = wp_remote_get($url, ["timeout" => 60]);
     $body = wp_remote_retrieve_body($response);
     $body = json_decode($body, true);

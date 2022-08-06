@@ -76,4 +76,4 @@ if (class_exists("WebkimaElements\\Init")) {
 }
 
 // require_once dirname(__FILE__) . "/inc/source.php";ß
-// require_once dirname(__FILE__) . "/inc/module.php";
+require_once dirname(__FILE__) . "/inc/module.php";
