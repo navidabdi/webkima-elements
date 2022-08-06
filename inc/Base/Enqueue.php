@@ -11,13 +11,14 @@ class Enqueue extends BaseController
 {
   public function register()
   {
-    // var_dump(get_option("webkima_elements"));
     if ($this->activated("we_font_backend")) {
       add_action("admin_enqueue_scripts", [$this, "enqueueIranYekanFont"]);
     }
+
     if ($this->activated("we_font_frontend")) {
       add_action("wp_enqueue_scripts", [$this, "enqueueIranYekanFont"]);
     }
+
     if ($this->activated("we_font_elementor_editor")) {
       add_action("elementor/editor/before_enqueue_scripts", [
         $this,
@@ -29,19 +30,6 @@ class Enqueue extends BaseController
         "enqueueElementorEditor",
       ]);
     }
-    add_action("admin_enqueue_scripts", [$this, "enqueueAdminCssAndJs"]);
-  }
-
-  public function enqueueAdminCssAndJs()
-  {
-    wp_enqueue_style(
-      "webkima-elements-admin-css",
-      $this->plugin_url . "assets/css/admin-css.css"
-    );
-    wp_enqueue_script(
-      "webkima-elements-admin-js",
-      $this->plugin_url . "assets/js/admin-js.js"
-    );
   }
 
   public function enqueueIranYekanFont()
