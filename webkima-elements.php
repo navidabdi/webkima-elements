@@ -75,4 +75,4 @@ if (class_exists("WebkimaElements\\Init")) {
   WebkimaElements\Init::register_services();
 }
 
-require_once dirname(__FILE__) . "/inc/module.php";
+// require_once dirname(__FILE__) . "/inc/module.php";

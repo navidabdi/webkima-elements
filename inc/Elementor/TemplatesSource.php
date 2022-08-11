@@ -1,11 +1,6 @@
 <?php
 
-if (!defined("ABSPATH")) {
-  exit(); // Exit if accessed directly.
-}
-
-class Webkima_Elements_Templates_Source extends
-  Elementor\TemplateLibrary\Source_Base
+class TemplatesSource extends Elementor\TemplateLibrary\Source_Base
 {
   /**
    * Template prefix

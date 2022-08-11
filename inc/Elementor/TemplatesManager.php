@@ -4,8 +4,10 @@
  * @package  WebkimaElements
  */
 
-namespace WebkimaElements\ElementorFunc;
+namespace WebkimaElements\Elementor;
 use WebkimaElements\Base\BaseController;
+use Elementor;
+// use WebkimaElements\Elementor\TemplatesSource;
 
 class TemplatesManager extends BaseController
 {
@@ -18,21 +20,32 @@ class TemplatesManager extends BaseController
   /**
    * Template option name
    */
-  protected $option = "persian_elementor_categories";
+  protected $option = "webkima_elements_categories";
 
   /**
    * Constructor for the class
    */
+  public function register()
+  {
+    /**
+     * Returns instance of TemplatesManager
+     *
+     * @return object
+     */
+
+    return TemplatesManager::get_instance()->init();
+  }
+
   public function init()
   {
-    // Register efa-templates source
-    add_action("elementor/init", [$this, "register_templates_source"]);
+    // Register webkima-elements-templates source
+    add_action("elementor/init", [$this, "registerTemplatesSource"]);
 
     if (defined("Elementor\Api::LIBRARY_OPTION_KEY")) {
-      // Add EFA Templates to Elementor templates list
+      // Add Webkima Elements Templates to Elementor templates list
       add_filter("option_" . Elementor\Api::LIBRARY_OPTION_KEY, [
         $this,
-        "prepend_categories",
+        "prependCategories",
       ]);
     }
 
@@ -43,13 +56,13 @@ class TemplatesManager extends BaseController
     ) {
       add_action(
         "elementor/ajax/register_actions",
-        [$this, "register_ajax_actions"],
+        [$this, "registerAjaxActions"],
         20
       );
     } else {
       add_action(
         "wp_ajax_elementor_get_template_data",
-        [$this, "force_webkima_elements_template_source"],
+        [$this, "forceWebkimaElementsTemplatesSource"],
         0
       );
     }
@@ -58,20 +71,18 @@ class TemplatesManager extends BaseController
   /**
    * Register
    */
-  public function register_templates_source()
+  public function registerTemplatesSource()
   {
-    require plugin_dir_path(__FILE__) . "source.php";
+    require plugin_dir_path(__FILE__) . "TemplatesSource.php";
 
     $elementor = Elementor\Plugin::instance();
-    $elementor->templates_manager->register_source(
-      "Persian_Elementor_Templates_Source"
-    );
+    $elementor->templates_manager->register_source("TemplatesSource");
   }
 
   /**
    * Return transient key
    */
-  public function transient_key()
+  public function transientKey()
   {
     return $this->option . "_" . WEBKIMA_ELEMENTS_VER;
   }
@@ -79,13 +90,13 @@ class TemplatesManager extends BaseController
   /**
    * Retrieves categories list
    */
-  public function get_categories()
+  public function getCategories()
   {
-    $categories = get_transient($this->transient_key());
+    $categories = get_transient($this->transientKey());
 
     if (!$categories) {
-      $categories = $this->remote_get_categories();
-      set_transient($this->transient_key(), $categories, WEEK_IN_SECONDS);
+      $categories = $this->remoteGetCategories();
+      set_transient($this->transientKey(), $categories, WEEK_IN_SECONDS);
     }
 
     return $categories;
@@ -94,9 +105,9 @@ class TemplatesManager extends BaseController
   /**
    * Get categories
    */
-  public function remote_get_categories()
+  public function remoteGetCategories()
   {
-    $url = PERSIAN_ELEMENTOR_URL . "json/categories.json";
+    $url = WEBKIMA_ELEMENTS_URL . "json/categories.json";
     $response = wp_remote_get($url, ["timeout" => 60]);
     $body = wp_remote_retrieve_body($response);
     $body = json_decode($body, true);
@@ -107,7 +118,7 @@ class TemplatesManager extends BaseController
   /**
    * Add templates to Elementor templates list
    */
-  public function prepend_categories($library_data)
+  public function prependCategories($library_data)
   {
     $categories = ["page", "login", "register", "loop", "comment"];
 
@@ -136,7 +147,7 @@ class TemplatesManager extends BaseController
   /**
    * Register AJAX actions
    */
-  public function register_ajax_actions($ajax)
+  public function registerAjaxActions($ajax)
   {
     if (!isset($_REQUEST["actions"])) {
       return;
@@ -165,23 +176,23 @@ class TemplatesManager extends BaseController
       return;
     }
 
-    if (false === strpos($data["template_id"], "efa_")) {
+    if (false === strpos($data["template_id"], "we_")) {
       return;
     }
 
     $ajax->register_ajax_action("get_template_data", [
       $this,
-      "get_efa_template_data",
+      "getWebkimaElementsTemplateData",
     ]);
   }
 
   /**
    * Get template data.
    */
-  public function get_efa_template_data($args)
+  public function getWebkimaElementsTemplateData($args)
   {
     $source = Elementor\Plugin::instance()->templates_manager->get_source(
-      "persiantemplate"
+      "WebkimaAcademy"
     );
 
     $data = $source->get_data($args);
@@ -192,17 +203,17 @@ class TemplatesManager extends BaseController
   /**
    * Return template data insted of elementor template.
    */
-  public function force_webkima_elements_template_source()
+  public function forceWebkimaElementsTemplatesSource()
   {
     if (empty($_REQUEST["template_id"])) {
       return;
     }
 
-    if (false === strpos($_REQUEST["template_id"], "efa_")) {
+    if (false === strpos($_REQUEST["template_id"], "we_")) {
       return;
     }
 
-    $_REQUEST["source"] = "persiantemplate";
+    $_REQUEST["source"] = "WebkimaAcademy";
   }
 
   /**

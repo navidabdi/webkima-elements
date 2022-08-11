@@ -17,7 +17,8 @@ final class Init
   {
     return [
       Base\Enqueue::class,
-      // ElementorFunc\EditorFonts::class,
+      Elementor\TemplatesManager::class,
+      // Elementor\TemplatesManager::class,
     ];
   }
 
