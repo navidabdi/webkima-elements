@@ -10,7 +10,7 @@ class Webkima_Elements_Templates_Source extends
   /**
    * Template prefix
    */
-  protected $template_prefix = "";
+  protected $template_prefix = "we_";
 
   /**
    * Return templates prefix
@@ -36,7 +36,8 @@ class Webkima_Elements_Templates_Source extends
 
   public function get_items($args = [])
   {
-    $url = "https://dl7.webkima.com/wkel-lib/info.json";
+    $url =
+      "https://raw.githubusercontent.com/navidabdi/webkima-elements-library/main/info.json";
     $response = wp_remote_get($url, ["timeout" => 60]);
     $body = wp_remote_retrieve_body($response);
     $body = json_decode($body, true);
@@ -102,7 +103,10 @@ class Webkima_Elements_Templates_Source extends
   public function get_data(array $args, $context = "display")
   {
     $filename = str_replace($this->template_prefix, "", $args["template_id"]);
-    $url = "https://dl7.webkima.com/wkel-lib/" . $filename . ".json";
+    $url =
+      "https://raw.githubusercontent.com/navidabdi/webkima-elements-library/main/" .
+      $filename .
+      ".json";
     $response = wp_remote_get($url, ["timeout" => 60]);
     $body = wp_remote_retrieve_body($response);
     $body = json_decode($body, true);

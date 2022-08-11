@@ -20,11 +20,11 @@ class TemplatesManager
    */
   public function init()
   {
-    // Register efa-templates source
+    // Register webkima-elements-templates source
     add_action("elementor/init", [$this, "register_templates_source"]);
 
     if (defined("Elementor\Api::LIBRARY_OPTION_KEY")) {
-      // Add EFA Templates to Elementor templates list
+      // Add Webkima Elements Templates to Elementor templates list
       add_filter("option_" . Elementor\Api::LIBRARY_OPTION_KEY, [
         $this,
         "prepend_categories",
@@ -160,20 +160,20 @@ class TemplatesManager
       return;
     }
 
-    if (false === strpos($data["template_id"], "efa_")) {
+    if (false === strpos($data["template_id"], "we_")) {
       return;
     }
 
     $ajax->register_ajax_action("get_template_data", [
       $this,
-      "get_efa_template_data",
+      "get_webkima_elements_template_data",
     ]);
   }
 
   /**
    * Get template data.
    */
-  public function get_efa_template_data($args)
+  public function get_webkima_elements_template_data($args)
   {
     $source = Elementor\Plugin::instance()->templates_manager->get_source(
       "WebkimaAcademy"
@@ -193,7 +193,7 @@ class TemplatesManager
       return;
     }
 
-    if (false === strpos($_REQUEST["template_id"], "efa_")) {
+    if (false === strpos($_REQUEST["template_id"], "we_")) {
       return;
     }
 
