@@ -1,6 +1,6 @@
 <?php
 /**
- * @package EFA
+ * @package WEBKIMA ELEMENTS
  */
 defined("ABSPATH") or die();
 /**
@@ -99,6 +99,18 @@ if (class_exists("EFS")) {
           ": " .
           WEBKIMA_ELEMENTS_VER,
       ],
+      [
+        "id" => "we-select-font",
+        "type" => "select",
+        "title" => __("Chose your favoriate font", "webkima-elements"),
+        "placeholder" => __("Chose a font", "webkima-elements"),
+        "options" => [
+          "iranyekan" => __("iranyekan", "webkima-elements"),
+          "vazir" => __("vazir", "webkima-elements"),
+        ],
+        "default" => "iranyekan",
+      ],
+
       [
         "id" => "we_font_backend",
         "type" => "switcher",

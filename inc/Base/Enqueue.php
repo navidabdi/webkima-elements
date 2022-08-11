@@ -11,12 +11,15 @@ class Enqueue extends BaseController
 {
   public function register()
   {
+    // Chose Font Option
+    $this->chosen_font = get_option("webkima_elements")["we-select-font"];
+
     if ($this->activated("we_font_backend")) {
-      add_action("admin_enqueue_scripts", [$this, "enqueueIranYekanFont"]);
+      add_action("admin_enqueue_scripts", [$this, "enqueueChosenFont"]);
     }
 
     if ($this->activated("we_font_frontend")) {
-      add_action("wp_enqueue_scripts", [$this, "enqueueIranYekanFont"]);
+      add_action("wp_enqueue_scripts", [$this, "enqueueChosenFont"]);
     }
 
     if ($this->activated("we_font_elementor_editor")) {
@@ -37,19 +40,11 @@ class Enqueue extends BaseController
     ]);
   }
 
-  public function enqueueIranYekanFont()
+  public function enqueueChosenFont()
   {
     wp_enqueue_style(
-      "webkima-elements-iranyekan-font",
-      $this->plugin_url . "assets/css/iranyekan-font.css"
-    );
-  }
-
-  public function enqueueVazirFont()
-  {
-    wp_enqueue_style(
-      "webkima-elements-vazir-font",
-      $this->plugin_url . "assets/css/vazir-font.css"
+      "webkima-elements-chosen-font",
+      $this->plugin_url . "assets/css/" . $this->choseFont($this->chosen_font)
     );
   }
 
@@ -68,5 +63,19 @@ class Enqueue extends BaseController
       "webkima-elements-template-js",
       $this->plugin_url . "assets/js/editor.js"
     );
+  }
+  // Chose Font
+  public function choseFont($option)
+  {
+    $font_css_file = null;
+    switch ($option) {
+      case "iranyekan":
+        $font_css_file = "iranyekan-font.css";
+        break;
+      case "vazir":
+        $font_css_file = "vazir-font.css";
+        break;
+    }
+    return $font_css_file;
   }
 }
