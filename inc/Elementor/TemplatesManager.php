@@ -4,12 +4,7 @@
  * @package  WebkimaElements
  */
 
-namespace WebkimaElements\Elementor;
-use WebkimaElements\Base\BaseController;
-use Elementor;
-// use WebkimaElements\Elementor\TemplatesSource;
-
-class TemplatesManager extends BaseController
+class TemplatesManager
 {
   /**
    * A reference to an instance of this class.
@@ -25,27 +20,16 @@ class TemplatesManager extends BaseController
   /**
    * Constructor for the class
    */
-  public function register()
-  {
-    /**
-     * Returns instance of TemplatesManager
-     *
-     * @return object
-     */
-
-    return TemplatesManager::get_instance()->init();
-  }
-
   public function init()
   {
     // Register webkima-elements-templates source
-    add_action("elementor/init", [$this, "registerTemplatesSource"]);
+    add_action("elementor/init", [$this, "register_templates_source"]);
 
     if (defined("Elementor\Api::LIBRARY_OPTION_KEY")) {
       // Add Webkima Elements Templates to Elementor templates list
       add_filter("option_" . Elementor\Api::LIBRARY_OPTION_KEY, [
         $this,
-        "prependCategories",
+        "prepend_categories",
       ]);
     }
 
@@ -56,13 +40,13 @@ class TemplatesManager extends BaseController
     ) {
       add_action(
         "elementor/ajax/register_actions",
-        [$this, "registerAjaxActions"],
+        [$this, "register_ajax_actions"],
         20
       );
     } else {
       add_action(
         "wp_ajax_elementor_get_template_data",
-        [$this, "forceWebkimaElementsTemplatesSource"],
+        [$this, "force_webkima_elements_template_source"],
         0
       );
     }
@@ -71,7 +55,7 @@ class TemplatesManager extends BaseController
   /**
    * Register
    */
-  public function registerTemplatesSource()
+  public function register_templates_source()
   {
     require plugin_dir_path(__FILE__) . "TemplatesSource.php";
 
@@ -82,7 +66,7 @@ class TemplatesManager extends BaseController
   /**
    * Return transient key
    */
-  public function transientKey()
+  public function transient_key()
   {
     return $this->option . "_" . WEBKIMA_ELEMENTS_VER;
   }
@@ -90,13 +74,13 @@ class TemplatesManager extends BaseController
   /**
    * Retrieves categories list
    */
-  public function getCategories()
+  public function get_categories()
   {
-    $categories = get_transient($this->transientKey());
+    $categories = get_transient($this->transient_key());
 
     if (!$categories) {
-      $categories = $this->remoteGetCategories();
-      set_transient($this->transientKey(), $categories, WEEK_IN_SECONDS);
+      $categories = $this->remote_get_categories();
+      set_transient($this->transient_key(), $categories, WEEK_IN_SECONDS);
     }
 
     return $categories;
@@ -105,7 +89,7 @@ class TemplatesManager extends BaseController
   /**
    * Get categories
    */
-  public function remoteGetCategories()
+  public function remote_get_categories()
   {
     $url = WEBKIMA_ELEMENTS_URL . "json/categories.json";
     $response = wp_remote_get($url, ["timeout" => 60]);
@@ -118,7 +102,7 @@ class TemplatesManager extends BaseController
   /**
    * Add templates to Elementor templates list
    */
-  public function prependCategories($library_data)
+  public function prepend_categories($library_data)
   {
     $categories = ["page", "login", "register", "loop", "comment"];
 
@@ -147,7 +131,7 @@ class TemplatesManager extends BaseController
   /**
    * Register AJAX actions
    */
-  public function registerAjaxActions($ajax)
+  public function register_ajax_actions($ajax)
   {
     if (!isset($_REQUEST["actions"])) {
       return;
@@ -182,14 +166,14 @@ class TemplatesManager extends BaseController
 
     $ajax->register_ajax_action("get_template_data", [
       $this,
-      "getWebkimaElementsTemplateData",
+      "get_webkima_elements_template_data",
     ]);
   }
 
   /**
    * Get template data.
    */
-  public function getWebkimaElementsTemplateData($args)
+  public function get_webkima_elements_template_data($args)
   {
     $source = Elementor\Plugin::instance()->templates_manager->get_source(
       "WebkimaAcademy"
@@ -203,7 +187,7 @@ class TemplatesManager extends BaseController
   /**
    * Return template data insted of elementor template.
    */
-  public function forceWebkimaElementsTemplatesSource()
+  public function force_webkima_elements_template_source()
   {
     if (empty($_REQUEST["template_id"])) {
       return;
@@ -228,3 +212,14 @@ class TemplatesManager extends BaseController
     return self::$instance;
   }
 }
+
+/**
+ * Returns instance of TemplatesManager
+ *
+ * @return object
+ */
+function manager_init()
+{
+  return TemplatesManager::get_instance();
+}
+manager_init()->init();

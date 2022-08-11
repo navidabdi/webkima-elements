@@ -17,7 +17,7 @@ final class Init
   {
     return [
       Base\Enqueue::class,
-      Elementor\TemplatesManager::class,
+      // Elementor\TemplatesManager::class,
       // Elementor\TemplatesManager::class,
     ];
   }
