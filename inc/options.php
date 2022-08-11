@@ -103,6 +103,10 @@ if (class_exists("EFS")) {
         "id" => "we-select-font",
         "type" => "select",
         "title" => __("Chose your favoriate font", "webkima-elements"),
+        "subtitle" => __(
+          "Chose a font to use as main font on all pages of the website.",
+          "webkima-elements"
+        ),
         "placeholder" => __("Chose a font", "webkima-elements"),
         "options" => [
           "iranyekan" => __("iranyekan", "webkima-elements"),
