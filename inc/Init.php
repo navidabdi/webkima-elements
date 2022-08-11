@@ -15,11 +15,7 @@ final class Init
 
   public static function get_services()
   {
-    return [
-      Base\Enqueue::class,
-      // Elementor\TemplatesManager::class,
-      // Elementor\TemplatesManager::class,
-    ];
+    return [Base\Enqueue::class];
   }
 
   /**

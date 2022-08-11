@@ -76,5 +76,3 @@ if (class_exists("WebkimaElements\\Init")) {
 }
 
 require_once dirname(__FILE__) . "/inc/Elementor/TemplatesManager.php";
-
-// var_dump(get_option("webkima_elements")["we-select-font"]);
