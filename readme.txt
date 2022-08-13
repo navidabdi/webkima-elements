@@ -5,7 +5,7 @@ Tags: elementor,persian,parsi,farsi,iran,iranian,rtl,fa_IR,المنتور
 Requires at least: 5.0
 Tested up to: 6.0.1
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 = لیست فونت های رایگان =
 
 - **IRANYekan**
+- **‌Vazir**
 - **فونت های دیگر بزودی اعمال می‌شود**
 
 برای غیر فعال سازی و عدم بارگذاری فونت ها می توانید از پیشخوان وردپرس، گزینه وبکیما المنت و از تب تنظیمات بارگذاری فونت ها را در هر بخش به صورت مجزا مدیریت کنید.
@@ -64,6 +65,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+= 1.1 =
+
+افزودن فونت وزیر
+افزودن کتابخانه اختصاصی وبکیما برای استفاده از تمپلیت های آماده
+بهبود ظاهر المنتور
+بهبود ظاهر بخش تنظیمات افزونه
 
 = 1.0 =
 
