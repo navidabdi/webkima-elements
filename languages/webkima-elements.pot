@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Webkima Elements\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-11 12:08+0000\n"
+"POT-Creation-Date: 2022-08-13 15:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -107,7 +107,6 @@ msgid ""
 msgstr ""
 
 #: inc/options.php:113
-msgctxt "وزیر"
 msgid "vazir"
 msgstr ""
 

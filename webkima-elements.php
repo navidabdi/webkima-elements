@@ -39,14 +39,7 @@ add_action("csf_init", "localizationWebkimaElements");
 function localizationWebkimaElements()
 {
   $path = dirname(plugin_basename(__FILE__)) . "/languages/";
-  $loaded = load_plugin_textdomain("webkima-elements", false, $path);
-
-  if (isset($_GET["page"]) && $_GET["page"] == basename(__FILE__) && !$loaded) {
-    echo '<div class="error">Sample Localization: ' .
-      __("Could not load the localization file: " . $path, "webkima-elements") .
-      "</div>";
-    return;
-  }
+  load_plugin_textdomain("webkima-elements", false, $path);
 }
 
 /*
