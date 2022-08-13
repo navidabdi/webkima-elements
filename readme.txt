@@ -41,7 +41,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 = Support =
 
-* پشتیبانی [آموزش وردپرس](https://webkima.com/)
+* پشتیبانی [آموزش وردپرس](https://webkima.com/wordpress-tutorials/)
+* پشتیبانی [آموزش المنتور](https://webkima.com/elementor-tutorials/)
 
 == Screenshots ==
 
