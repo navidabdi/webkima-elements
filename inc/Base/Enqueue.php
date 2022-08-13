@@ -75,6 +75,8 @@ class Enqueue extends BaseController
       case "vazir":
         $font_css_file = "vazir-font.css";
         break;
+      default:
+        $font_css_file = "iranyekan-font.css";
     }
     return $font_css_file;
   }

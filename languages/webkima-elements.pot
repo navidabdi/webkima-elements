@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Webkima Elements\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-05 16:38+0000\n"
+"POT-Creation-Date: 2022-08-11 12:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -22,49 +22,65 @@ msgid ""
 "the free and Pro Elementor plugin"
 msgstr ""
 
-#: inc/options.php:142
+#: inc/options.php:158
 msgid "About"
 msgstr ""
 
-#: inc/options.php:131
+#: inc/options.php:147
 msgid "Activate Font On Elementor Editor"
 msgstr ""
 
-#: inc/options.php:121
+#: inc/options.php:137
 msgid "Activate Font On The Front-End"
 msgstr ""
 
-#: inc/options.php:108
+#: inc/options.php:124
 msgid "Activate Font On WordPress Dashboard"
 msgstr ""
 
-#: inc/options.php:106 inc/options.php:119 inc/options.php:129
+#: inc/options.php:122 inc/options.php:135 inc/options.php:145
 msgid "active"
 msgstr ""
 
-#: inc/options.php:107 inc/options.php:120 inc/options.php:130
-msgid "deactive"
+#: inc/options.php:110
+msgid "Chose a font"
 msgstr ""
 
-#: inc/options.php:156
-msgid "Developed by Nabi Abdi and Webkima Team."
-msgstr ""
-
-#: inc/options.php:128
-msgid "Font On Elementor Editor"
-msgstr ""
-
-#: inc/options.php:118
-msgid "Font On The Front-End"
+#: inc/options.php:106
+msgid "Chose a font to use as main font on all pages of the website."
 msgstr ""
 
 #: inc/options.php:105
+msgid "Chose your favoriate font"
+msgstr ""
+
+#: inc/options.php:123 inc/options.php:136 inc/options.php:146
+msgid "deactive"
+msgstr ""
+
+#: inc/options.php:172
+msgid "Developed by Nabi Abdi and Webkima Team."
+msgstr ""
+
+#: inc/options.php:144
+msgid "Font On Elementor Editor"
+msgstr ""
+
+#: inc/options.php:134
+msgid "Font On The Front-End"
+msgstr ""
+
+#: inc/options.php:121
 msgid "Font On WordPress Dashboard"
 msgstr ""
 
 #. URI of the plugin
 #. Author URI of the plugin
 msgid "https://webkima.com/"
+msgstr ""
+
+#: inc/options.php:112
+msgid "iranyekan"
 msgstr ""
 
 #: inc/options.php:92
@@ -83,11 +99,16 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: inc/options.php:147
+#: inc/options.php:163
 msgid ""
 "This plugin is developed by Webkima Academy team.\n"
 "       we wanna add a lot of cool feaure to this plugin as soon as posible.\n"
 "       Notice: We try our best to keep this plugin as fast as we can."
+msgstr ""
+
+#: inc/options.php:113
+msgctxt "وزیر"
+msgid "vazir"
 msgstr ""
 
 #. Author of the plugin
@@ -95,13 +116,10 @@ msgid "Webkima Academy"
 msgstr ""
 
 #. Name of the plugin
-#: inc/options.php:27 inc/options.php:31 inc/Base/BaseController.php:38
+#: inc/options.php:27 inc/options.php:31 inc/options.php:61 inc/options.php:63
+#: inc/Elementor/TemplatesSource.php:25 inc/Base/BaseController.php:38
 #: inc/Base/BaseController.php:39
 msgid "Webkima Elements"
-msgstr ""
-
-#: inc/options.php:61
-msgid "Webkima Elements support"
 msgstr ""
 
 #: inc/Base/BaseController.php:51

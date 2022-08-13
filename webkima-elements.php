@@ -12,7 +12,7 @@
  * Author: Webkima Academy
  * Author URI: https://webkima.com/
  * Text Domain: webkima-elements
- * Domain Path: /languages3
+ * Domain Path: /languages
  * License: GPLv2 or later
  * Elementor tested up to: 3.6.5
  * Elementor Pro tested up to: 3.7.0
@@ -36,7 +36,6 @@ define("WEBKIMA_ELEMENTS_VER", "1.0.0");
 // Localization
 add_action("init", "localizationWebkimaElements");
 add_action("csf_init", "localizationWebkimaElements");
-
 function localizationWebkimaElements()
 {
   $path = dirname(plugin_basename(__FILE__)) . "/languages/";
