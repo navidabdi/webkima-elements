@@ -8,7 +8,7 @@
  * Plugin Name: Webkima Elements
  * Plugin URI: https://webkima.com/
  * Description: A very light plugin for Persianization and installation of Persian fonts on the free and Pro Elementor plugin
- * Version: 1.1.0
+ * Version: 1.2.0
  * Author: Webkima Academy
  * Author URI: https://webkima.com/
  * Text Domain: webkima-elements
