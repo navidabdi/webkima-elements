@@ -170,6 +170,70 @@ if (class_exists("EFS")) {
         "default" => false,
         "text_width" => 70,
       ],
+      [
+        "id" => "we_goup_size",
+        "type" => "select",
+        "title" => __("سایز دکمه", "webkima-elements"),
+        "subtitle" => __(
+          "سایز دکمه بازگشت به بالا را انتخاب کنید",
+          "webkima-elements"
+        ),
+        "placeholder" => __("انتخاب سایز", "webkima-elements"),
+        "options" => [
+          "35" => __("کوچک", "webkima-elements"),
+          "45" => __("متوسط", "webkima-elements"),
+          "55" => __("بزرگ", "webkima-elements"),
+        ],
+        "default" => "45",
+      ],
+      [
+        "id" => "we_goup_position",
+        "type" => "switcher",
+        "title" => __("مکان دکمه", "webkima-elements"),
+        "text_on" => __("راست", "webkima-elements"),
+        "text_off" => __("چپ", "webkima-elements"),
+        "subtitle" => __("مکان دکمه در صفحه را مشخص کنید", "webkima-elements"),
+        "default" => true,
+        "text_width" => 70,
+      ],
+      [
+        "id" => "we_goup_bgcolor",
+        "type" => "color",
+        "title" => __("پس زمینه دکمه", "webkima-elements"),
+        "subtitle" => __("پس زمینه دکمه را انتخاب کنید.", "webkima-elements"),
+        "default" => "#fff",
+        "text_width" => 70,
+      ],
+      [
+        "id" => "we_goup_textcolor",
+        "type" => "color",
+        "title" => __("رنگ آیکون", "webkima-elements"),
+        "subtitle" => __("رنگ آیکون را انتخاب کنید", "webkima-elements"),
+        "default" => "#282600",
+        "text_width" => 70,
+      ],
+      [
+        "id" => "we_goup_bordercolor",
+        "type" => "color",
+        "title" => __("رنگ بوردر", "webkima-elements"),
+        "subtitle" => __("رنگ بوردر را انتخاب کنید", "webkima-elements"),
+        "default" => "#282600",
+        "text_width" => 70,
+      ],
+      [
+        "id" => "we_goup_radius",
+        "type" => "slider",
+        "title" => __("گردی گوشه‌ها", "webkima-elements"),
+        "subtitle" => __(
+          "میزان گردی گوشه های دکمه بازگشت به بالا را انتخاب کنید.",
+          "webkima-elements"
+        ),
+        "min" => 0,
+        "max" => 55,
+        "step" => 1,
+        "unit" => "px",
+        "default" => 10,
+      ],
     ],
   ]);
 

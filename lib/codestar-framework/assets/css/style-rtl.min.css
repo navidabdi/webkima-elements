@@ -58,6 +58,7 @@
 .csf-content {
   margin-left: 0;
   margin-right: 225px;
+  min-height: 80vh;
 }
 .csf-sections {
   float: right;
@@ -415,4 +416,7 @@
   outline: none;
   border: none;
   box-shadow: none;
+}
+.about-wrap {
+  max-width: 1200px !important;
 }
