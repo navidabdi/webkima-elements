@@ -31,7 +31,7 @@ define("WEBKIMA_ELEMENTS_URL", plugin_dir_url(__FILE__));
 define("WEBKIMA_ELEMENTS_PATH", plugin_dir_path(__FILE__));
 define("WEBKIMA_ELEMENTS_NAME", plugin_basename(__FILE__));
 define("WEBKIMA_ELEMENTS_TEXT_DOMAIN", "webkima-elements");
-define("WEBKIMA_ELEMENTS_VER", "1.1.0");
+define("WEBKIMA_ELEMENTS_VER", "1.3.0");
 
 // Localization
 add_action("init", "localizationWebkimaElements");
