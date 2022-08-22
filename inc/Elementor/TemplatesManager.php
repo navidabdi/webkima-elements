@@ -3,7 +3,9 @@
 /**
  * @package  WebkimaElements
  */
-
+if (!defined("ABSPATH")) {
+  die("You Can Not Access This File Directly!"); // Die if accessed directlyf
+}
 class TemplatesManager
 {
   /**

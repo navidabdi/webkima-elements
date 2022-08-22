@@ -9,10 +9,13 @@ use WebkimaElements\Base\BaseController;
 
 class Enqueue extends BaseController
 {
+  public $chosen_font = "iranyekan";
   public function register()
   {
     // Chose Font Option
-    $this->chosen_font = get_option("webkima_elements")["we-select-font"];
+    if (isset(get_option("webkima_elements")["we-select-font"])) {
+      $this->chosen_font = get_option("webkima_elements")["we-select-font"];
+    }
 
     if ($this->activated("we_font_backend")) {
       add_action("admin_enqueue_scripts", [$this, "enqueueChosenFont"]);

@@ -1,5 +1,7 @@
 <?php
-
+if (!defined("ABSPATH")) {
+  die("You Can Not Access This File Directly!"); // Die if accessed directlyf
+}
 class TemplatesSource extends Elementor\TemplateLibrary\Source_Base
 {
   /**
