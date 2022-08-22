@@ -153,6 +153,25 @@ if (class_exists("EFS")) {
       ],
     ],
   ]);
+  EFS::createSection($prefix, [
+    "title" => __("دکمه بازگشت به بالا", "webkima-elements"),
+    "icon" => "fas fa-chevron-circle-up",
+    "fields" => [
+      [
+        "id" => "we_goup_btn",
+        "type" => "switcher",
+        "title" => __("دکمه بازگشت به بالا", "webkima-elements"),
+        "text_on" => __("active", "webkima-elements"),
+        "text_off" => __("deactive", "webkima-elements"),
+        "subtitle" => __(
+          "فعال کردن دکمه بازگشت به بالا در تمامی صفحات سایت",
+          "webkima-elements"
+        ),
+        "default" => false,
+        "text_width" => 70,
+      ],
+    ],
+  ]);
 
   EFS::createSection($prefix, [
     "title" => __("About", "webkima-elements"),
