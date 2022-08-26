@@ -2,7 +2,7 @@
 
 /**
  * @package  WebkimaElements
- * change the name to Capital A!
+ *
  */
 
 namespace WebkimaElements\Base;
