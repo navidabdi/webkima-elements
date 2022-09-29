@@ -1,7 +1,7 @@
 <?php
-
 /**
  * @package  WebkimaElements
+ * @author Nabi Abdi https://webkima.com
  */
 
 /**
@@ -19,21 +19,27 @@
  */
 
 if (!defined("ABSPATH")) {
-  die("You Can Not Access This File Directly!"); // Die if accessed directlyf
+  die("You Can Not Access This File Directly!"); // Die if accessed directly
 }
 
 if (file_exists(dirname(__FILE__) . "/we-autoloader/autoload.php")) {
   require_once dirname(__FILE__) . "/we-autoloader/autoload.php";
 }
 
-// Define CONSTANTS
+/**
+ * Define CONSTANTS
+ * @since    1.0.0
+ */
 define("WEBKIMA_ELEMENTS_URL", plugin_dir_url(__FILE__));
 define("WEBKIMA_ELEMENTS_PATH", plugin_dir_path(__FILE__));
 define("WEBKIMA_ELEMENTS_NAME", plugin_basename(__FILE__));
 define("WEBKIMA_ELEMENTS_TEXT_DOMAIN", "webkima-elements");
 define("WEBKIMA_ELEMENTS_VER", "1.3.0");
 
-// Localization
+/**
+ * Plugin Localization
+ * @since    1.0.0
+ */
 add_action("init", "localizationWebkimaElements");
 add_action("csf_init", "localizationWebkimaElements");
 function localizationWebkimaElements()
@@ -42,8 +48,11 @@ function localizationWebkimaElements()
   load_plugin_textdomain("webkima-elements", false, $path);
 }
 
-/*
+/**
  * The code that runs during plugin activation
+ *
+ * @since  1.0.0
+ * @return void
  */
 function activate_webkima_elements()
 {
@@ -51,8 +60,11 @@ function activate_webkima_elements()
 }
 register_activation_hook(__FILE__, "activate_webkima_elements");
 
-/*
+/**
  * The code that runs during plugin deactivation
+ *
+ * @since  1.0.0
+ * @return void
  */
 function deactivate_webkima_elements()
 {
@@ -60,12 +72,14 @@ function deactivate_webkima_elements()
 }
 register_deactivation_hook(__FILE__, "deactivate_webkima_elements");
 
-/*
+/**
  * The code that runs during plugin Services
+ *
+ * @since  1.0.0
+ * @return void
  */
 if (class_exists("WebkimaElements\\Init")) {
   WebkimaElements\Init::register_services();
 }
 
 require_once dirname(__FILE__) . "/inc/Elementor/TemplatesManager.php";
-require_once dirname(__FILE__) . "/inc/functions.php";

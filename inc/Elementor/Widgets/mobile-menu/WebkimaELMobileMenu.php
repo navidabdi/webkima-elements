@@ -8,16 +8,6 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
 {
   protected $nav_menu_index = 1;
 
-  public function get_script_depends()
-  {
-    return ["webkimael-mobile-menu-script"];
-  }
-
-  public function get_style_depends()
-  {
-    return ["webkimael-mobile-menu-stylesheet"];
-  }
-
   public function get_name()
   {
     return "Webkima_Elements_Mobile_Menu";
@@ -65,14 +55,14 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
   {
     // Content Tab Start
     $this->start_controls_section("section_layout", [
-      "label" => esc_html__("Layout", "elementor-pro"),
+      "label" => esc_html__("Layout", "elementor"),
     ]);
 
     $menus = $this->get_available_menus();
 
     if (!empty($menus)) {
       $this->add_control("menu", [
-        "label" => esc_html__("Menu", "elementor-pro"),
+        "label" => esc_html__("Menu", "elementor"),
         "type" => \Elementor\Controls_Manager::SELECT,
         "options" => $menus,
         "default" => array_keys($menus)[0],
@@ -81,7 +71,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
         "description" => sprintf(
           esc_html__(
             'Go to the %1$sMenus screen%2$s to manage your menus.',
-            "elementor-pro"
+            "webkima-elements"
           ),
           sprintf('<a href="%s" target="_blank">', admin_url("nav-menus.php")),
           "</a>"
@@ -92,13 +82,13 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
         "type" => \Elementor\Controls_Manager::RAW_HTML,
         "raw" =>
           "<strong>" .
-          esc_html__("There are no menus in your site.", "elementor-pro") .
+          esc_html__("There are no menus in your site.", "webkima-elements") .
           "</strong><br>" .
           sprintf(
             /* translators: 1: Link open tag, 2: Link closing tag. */
             esc_html__(
               'Go to the %1$sMenus screen%2$s to create one.',
-              "elementor-pro"
+              "webkima-elements"
             ),
             sprintf(
               '<a href="%s" target="_blank">',
@@ -112,7 +102,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
     }
 
     $this->add_control("icon", [
-      "label" => esc_html__("Icon", "textdomain"),
+      "label" => esc_html__("Icon", "elementor"),
       "type" => \Elementor\Controls_Manager::ICONS,
       "default" => [
         "value" => "fas fa-bars",
@@ -121,7 +111,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
     ]);
 
     $this->add_control("icon_color", [
-      "label" => esc_html__("Icon Color", "elementor-addon"),
+      "label" => esc_html__("Icon Color", "webkima-elements"),
       "type" => \Elementor\Controls_Manager::COLOR,
       "selectors" => [
         "{{WRAPPER}} #webkimael_mobile_menu_icon" => "color: {{VALUE}};",
@@ -129,7 +119,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
     ]);
 
     $this->add_control("icon_size", [
-      "label" => esc_html__("Icon Size", "textdomain"),
+      "label" => esc_html__("Icon Size", "webkima-elements"),
       "type" => \Elementor\Controls_Manager::SLIDER,
       "size_units" => ["px"],
       "range" => [
@@ -154,12 +144,12 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
 
     // Style Tab Start
     $this->start_controls_section("section_title_style", [
-      "label" => esc_html__("Side Menu", "elementor-addon"),
+      "label" => esc_html__("Side Menu", "webkima-elements"),
       "tab" => \Elementor\Controls_Manager::TAB_STYLE,
     ]);
 
     $this->add_control("show_left_right", [
-      "label" => esc_html__("Show Left or Right", "textdomain"),
+      "label" => esc_html__("Show Left or Right", "webkima-elements"),
       "type" => \Elementor\Controls_Manager::SWITCHER,
       "label_on" => esc_html__("Left", "your-plugin"),
       "label_off" => esc_html__("Right", "your-plugin"),
@@ -168,7 +158,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
     ]);
 
     $this->add_control("aside_width", [
-      "label" => esc_html__("Width", "textdomain"),
+      "label" => esc_html__("Width", "elementor"),
       "type" => \Elementor\Controls_Manager::SLIDER,
       "size_units" => ["px", "%"],
       "range" => [
@@ -194,21 +184,20 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
 
     $this->add_group_control(\Elementor\Group_Control_Background::get_type(), [
       "name" => "aside_background",
-      "label" => esc_html__("Overly Background", "textdomain"),
+      "label" => esc_html__("Background Overlay", "textdomain"),
       "types" => ["classic", "gradient"],
-      // "default" => "rgba(0, 0, 0, 0.5)",
       "selector" => "{{WRAPPER}} .webkimael_mobile_menu_aside",
     ]);
 
     $this->end_controls_section();
 
     $this->start_controls_section("overly_section", [
-      "label" => esc_html__("Overly", "elementor-pro"),
+      "label" => esc_html__("Background Overlay", "elementor"),
       "tab" => \Elementor\Controls_Manager::TAB_STYLE,
     ]);
     $this->add_group_control(\Elementor\Group_Control_Background::get_type(), [
       "name" => "dark_part_background",
-      "label" => esc_html__("Overly Background", "elementor"),
+      "label" => esc_html__("Background Overlay", "elementor"),
       "types" => ["classic", "gradient"],
       "selector" => "{{WRAPPER}} #webkimael_mobile_menu_dark_part",
     ]);
@@ -230,7 +219,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
     ]);
 
     $this->add_control("first_layar_text_color", [
-      "label" => esc_html__("Text Color", "elementor"),
+      "label" => esc_html__("Link Color", "elementor"),
       "type" => \Elementor\Controls_Manager::COLOR,
       "default" => "var(--e-global-color-text)",
       "selectors" => [
@@ -240,17 +229,14 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
     ]);
 
     $this->add_control("first_layar_text_color_hover", [
-      "label" => esc_html__("Text Color Hover", "elementor"),
+      "label" => esc_html__("Link Hover Color", "elementor"),
       "type" => \Elementor\Controls_Manager::COLOR,
       "default" => "#fff",
       "selectors" => [
         "{{WRAPPER}} .webkimael_mobile_menu_aside > ul > li > a:hover" =>
           "color: {{VALUE}}",
       ],
-    ]);
-
-    $this->add_control("hr", [
-      "type" => \Elementor\Controls_Manager::DIVIDER,
+      "separator" => "after",
     ]);
 
     $this->add_control("first_layar_bg_color", [
@@ -263,7 +249,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
       ],
     ]);
     $this->add_control("first_layar_bg_color_hover", [
-      "label" => esc_html__("Background Color Hover", "elementor"),
+      "label" => esc_html__("Background Color Hover", "webkima-elements"),
       "type" => \Elementor\Controls_Manager::COLOR,
       "default" => "var(--e-global-color-primary)",
       "selectors" => [
@@ -273,7 +259,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
     ]);
 
     $this->add_control("first_layar_padding_x", [
-      "label" => esc_html__("Horizontal Padding", "elementor"),
+      "label" => esc_html__("Horizontal Padding", "webkima-elements"),
       "type" => \Elementor\Controls_Manager::SLIDER,
       "size_units" => ["px", "rem", "%"],
       "range" => [
@@ -303,7 +289,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
     ]);
 
     $this->add_control("first_layar_padding_y", [
-      "label" => esc_html__("Vertical Padding", "textdomain"),
+      "label" => esc_html__("Vertical Padding", "webkima-elements"),
       "type" => \Elementor\Controls_Manager::SLIDER,
       "size_units" => ["px", "rem", "%"],
       "range" => [
@@ -337,7 +323,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
     ]);
 
     $this->add_control("first_layar_icon_size", [
-      "label" => esc_html__("Icon Size", "elementor"),
+      "label" => esc_html__("Icon Size", "webkima-elements"),
       "type" => \Elementor\Controls_Manager::SLIDER,
       "size_units" => ["px", "rem"],
       "range" => [
@@ -363,7 +349,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
     ]);
 
     $this->add_control("first_layar_icon_line_height", [
-      "label" => esc_html__("Icon Line Height", "elementor"),
+      "label" => esc_html__("Icon Line Height", "webkima-elements"),
       "type" => \Elementor\Controls_Manager::SLIDER,
       "size_units" => ["px", "rem"],
       "range" => [
@@ -389,7 +375,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
     ]);
 
     $this->add_control("first_layar_icon_space", [
-      "label" => esc_html__("Icon Space", "elementor"),
+      "label" => esc_html__("Icon Space", "webkima-elements"),
       "type" => \Elementor\Controls_Manager::SLIDER,
       "size_units" => ["px", "rem", "%"],
       "range" => [
@@ -424,19 +410,19 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
      * Second Layar Menu Settings
      */
     $this->start_controls_section("second_layar_menu", [
-      "label" => esc_html__("Second Layar Menu", "elementor"),
+      "label" => esc_html__("Second Layar Menu", "webkima-elements"),
       "tab" => \Elementor\Controls_Manager::TAB_STYLE,
     ]);
 
     $this->add_group_control(\Elementor\Group_Control_Typography::get_type(), [
       "name" => "second_layar_typography",
-      "label" => esc_html__("second Layar Typography", "elementor"),
+      "label" => esc_html__("second Layar Typography", "webkima-elements"),
       "selector" =>
         "{{WRAPPER}} .webkimael_mobile_menu_aside > ul > li > ul > li > a",
     ]);
 
     $this->add_control("second_layar_text_color", [
-      "label" => esc_html__("Text Color", "elementor"),
+      "label" => esc_html__("Link Color", "elementor"),
       "type" => \Elementor\Controls_Manager::COLOR,
       "default" => "var(--e-global-color-text)",
       "selectors" => [
@@ -446,7 +432,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
     ]);
 
     $this->add_control("second_layar_text_color_hover", [
-      "label" => esc_html__("Text Color Hover", "elementor"),
+      "label" => esc_html__("Link Hover Color", "elementor"),
       "type" => \Elementor\Controls_Manager::COLOR,
       "default" => "#fff",
       "selectors" => [
@@ -469,7 +455,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
       ],
     ]);
     $this->add_control("second_layar_bg_color_hover", [
-      "label" => esc_html__("Background Color Hover", "elementor"),
+      "label" => esc_html__("Background Color Hover", "webkima-elements"),
       "type" => \Elementor\Controls_Manager::COLOR,
       "default" => "var(--e-global-color-primary)",
       "selectors" => [
@@ -479,7 +465,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
     ]);
 
     $this->add_control("second_layar_padding_x", [
-      "label" => esc_html__("Horizontal Padding", "textdomain"),
+      "label" => esc_html__("Horizontal Padding", "webkima-elements"),
       "type" => \Elementor\Controls_Manager::SLIDER,
       "size_units" => ["px", "rem", "%"],
       "range" => [
@@ -509,7 +495,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
     ]);
 
     $this->add_control("second_layar_padding_y", [
-      "label" => esc_html__("Vertical Padding", "textdomain"),
+      "label" => esc_html__("Vertical Padding", "webkima-elements"),
       "type" => \Elementor\Controls_Manager::SLIDER,
       "size_units" => ["px", "rem", "%"],
       "range" => [
