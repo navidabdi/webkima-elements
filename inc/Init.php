@@ -15,7 +15,10 @@ final class Init
 
   public static function get_services()
   {
-    $default_services = [Base\Enqueue::class];
+    $default_services = [
+      Base\Enqueue::class,
+      Base\RegisterElementorWidgets::class,
+    ];
     $extra_services = [];
     if (!empty(get_option("webkima_elements")["we_goup_btn"])) {
       $gotoup = Widgets\Gotoup::class;

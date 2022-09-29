@@ -14,8 +14,8 @@
  * Text Domain: webkima-elements
  * Domain Path: /languages
  * License: GPLv2 or later
- * Elementor tested up to: 3.7.2
- * Elementor Pro tested up to: 3.7.3
+ * Elementor tested up to: 3.7.7
+ * Elementor Pro tested up to: 3.7.7
  */
 
 if (!defined("ABSPATH")) {
@@ -68,3 +68,4 @@ if (class_exists("WebkimaElements\\Init")) {
 }
 
 require_once dirname(__FILE__) . "/inc/Elementor/TemplatesManager.php";
+require_once dirname(__FILE__) . "/inc/functions.php";

@@ -3,7 +3,7 @@ author: Webkima Academy
 Contributors: nabiabdi
 Tags: elementor,persian,parsi,farsi,iran,iranian,rtl,fa_IR,المنتور
 Requires at least: 5.0
-Tested up to: 6.0.1
+Tested up to: 6.0.2
 Requires PHP: 5.6
 Stable tag: 1.3.0
 License: GPLv2 or later
