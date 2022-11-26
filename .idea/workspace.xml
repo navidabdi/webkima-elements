@@ -3,20 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="daeaeab6-2313-41fe-9985-a1c42571ed06" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Init.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/Widgets/Gotoup.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Widgets/Gotoup.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Base.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/we-autoloader/autoload.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/we-autoloader/composer/ClassLoader.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/we-autoloader/composer/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/we-autoloader/composer/autoload_classmap.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/we-autoloader/composer/autoload_namespaces.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/we-autoloader/composer/autoload_psr4.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/we-autoloader/composer/autoload_real.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/we-autoloader/composer/autoload_static.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webkima-elements.php" beforeDir="false" afterPath="$PROJECT_DIR$/webkima-elements.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669470592557</updated>
-      <workItem from="1669470594158" duration="8513000" />
+      <workItem from="1669470594158" duration="10366000" />
     </task>
     <servers />
   </component>

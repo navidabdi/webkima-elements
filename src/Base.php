@@ -8,6 +8,8 @@
 
 namespace WebkimaElements;
 
+use WebkimaElements\Widgets\Gotoup;
+
 class Base {
 
     public static function register() {
@@ -15,6 +17,10 @@ class Base {
         add_action('admin_menu', __CLASS__ . '::webkimaElementsPanel');
 
         require_once WEBKIMA_ELEMENTS_PATH . 'inc/Elementor/TemplatesManager.php';
+
+        if (!empty(get_option("webkima_elements")["we_goup_btn"])) {
+            Gotoup::register();
+        }
     }
 
     /**
