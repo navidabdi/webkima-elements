@@ -13,7 +13,7 @@ class RegisterElementorWidgets {
     protected static $widgets_path;
 
     public static function init() {
-        static::$widgets_path = WEBKIMA_ELEMENTS_PATH . 'inc/Elementor/Widgets/';
+        static::$widgets_path = WEBKIMA_ELEMENTS_PATH . 'src/Elementor/Widgets/';
         add_action('elementor/widgets/register', __CLASS__ . '::registerElementorWidgets');
         add_action('elementor/elements/categories_registered', __CLASS__ . '::addElementorWidgetCategory');
         static::dynamicStyles();

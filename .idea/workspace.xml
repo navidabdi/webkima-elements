@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="daeaeab6-2313-41fe-9985-a1c42571ed06" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Widgets/Gotoup.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Widgets/Gotoup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/Elementor/TemplatesManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elementor/TemplatesManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/Elementor/TemplatesSource.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elementor/TemplatesSource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/Elementor/Widgets/mobile-menu/style.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elementor/Widgets/mobile-menu/style.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Base.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Base.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterElementorWidgets.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterElementorWidgets.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +46,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Elementor" />
       <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
@@ -53,7 +58,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669470592557</updated>
-      <workItem from="1669470594158" duration="10366000" />
+      <workItem from="1669470594158" duration="10820000" />
     </task>
     <servers />
   </component>

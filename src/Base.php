@@ -16,7 +16,7 @@ class Base {
         require_once WEBKIMA_ELEMENTS_PATH . 'lib/options.php';
         add_action('admin_menu', __CLASS__ . '::webkimaElementsPanel');
 
-        require_once WEBKIMA_ELEMENTS_PATH . 'inc/Elementor/TemplatesManager.php';
+        require_once WEBKIMA_ELEMENTS_PATH . 'src/Elementor/TemplatesManager.php';
 
         if (!empty(get_option("webkima_elements")["we_goup_btn"])) {
             Gotoup::register();
