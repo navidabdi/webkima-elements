@@ -17,7 +17,7 @@ final class Init
   {
     $default_services = [
       \WebkimaElements\Enqueue::class,
-      Base\RegisterElementorWidgets::class,
+      \WebkimaElements\RegisterElementorWidgets::class,
     ];
     $extra_services = [];
     if (!empty(get_option("webkima_elements")["we_goup_btn"])) {

@@ -34,6 +34,7 @@ class Plugin {
      */
     public static function init() {
         Enqueue::init();
+        RegisterElementorWidgets::init();
     }
 
     /**
