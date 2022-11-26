@@ -39,9 +39,9 @@ define("WEBKIMA_ELEMENTS_VER", "1.3.0");
  * @since  1.0.0
  * @return void
  */
-function classloader($class) {
+function classloader($class): void {
     static $ns_offset;
-    if (strpos($class, __NAMESPACE__ . '\\') === 0) {
+    if (str_starts_with($class, __NAMESPACE__ . '\\')) {
         if ($ns_offset === NULL) {
             $ns_offset = strlen(__NAMESPACE__) + 1;
         }
@@ -57,6 +57,6 @@ register_activation_hook(__FILE__, __NAMESPACE__ . '\Base::activate');
 register_deactivation_hook(__FILE__, __NAMESPACE__ . '\Base::deactivate');
 register_uninstall_hook(__FILE__, __NAMESPACE__ . '\Base::uninstall');
 
-add_action('plugins_loaded', __NAMESPACE__ . '\Plugin::load_textdomain');
+add_action('plugins_loaded', __NAMESPACE__ . '\Plugin::loadTextDomain');
 add_action('init', __NAMESPACE__ . '\Plugin::pre_init', 0);
 add_action('init', __NAMESPACE__ . '\Plugin::init', 20);

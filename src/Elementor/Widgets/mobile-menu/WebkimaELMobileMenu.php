@@ -6,53 +6,42 @@ if (!defined("ABSPATH")) {
 
 class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
 {
-  protected $nav_menu_index = 1;
+  protected int $nav_menu_index = 1;
 
-  public function get_name()
-  {
+  public function get_name(): string {
     return "Webkima_Elements_Mobile_Menu";
   }
 
-  public function get_title()
-  {
+  public function get_title(): string {
     return esc_html__("Mobile Menu", "webkima-elements");
   }
 
-  public function get_icon()
-  {
+  public function get_icon(): string {
     return "eicon-menu-bar";
   }
 
-  public function get_categories()
-  {
+  public function get_categories(): array {
     return ["webkima-elements"];
   }
 
-  public function get_keywords()
-  {
+  public function get_keywords(): array {
     return ["Mobile", "Menu"];
   }
 
-  private function get_available_menus()
-  {
+  private function get_available_menus(): array {
     $menus = wp_get_nav_menus();
-
     $options = [];
-
     foreach ($menus as $menu) {
       $options[$menu->slug] = $menu->name;
     }
-
     return $options;
   }
 
-  protected function get_nav_menu_index()
-  {
+  protected function get_nav_menu_index(): int {
     return $this->nav_menu_index++;
   }
 
-  protected function register_controls()
-  {
+  protected function register_controls() {
     // Content Tab Start
     $this->start_controls_section("section_layout", [
       "label" => esc_html__("Layout", "elementor"),
@@ -528,8 +517,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
     // Style Tab End
   }
 
-  protected function render()
-  {
+  protected function render() {
     $available_menus = $this->get_available_menus();
 
     if (!$available_menus) {

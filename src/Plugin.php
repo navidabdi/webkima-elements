@@ -22,7 +22,7 @@ class Plugin {
      * @since  1.0.0
      * @return void
      */
-    public static function pre_init() {
+    public static function pre_init(): void {
 
     }
 
@@ -32,7 +32,7 @@ class Plugin {
      * @since  1.0.0
      * @return void
      */
-    public static function init() {
+    public static function init(): void {
         Enqueue::init();
         RegisterElementorWidgets::init();
     }
@@ -43,7 +43,7 @@ class Plugin {
      * @since  1.0.0
      * @return void
      */
-    public static function load_textdomain() {
+    public static function loadTextDomain(): void {
         load_plugin_textdomain(static::L10N, false, static::L10N . '/languages/');
     }
 }

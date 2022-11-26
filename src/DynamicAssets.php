@@ -10,11 +10,9 @@ namespace WebkimaElements;
 
 class DynamicAssets {
 
-  public static $styles = [];
+  public static array $styles = [];
 
-  public static $root = ABSPATH;
-
-  public static function printStyles() {
+  public static function printStyles(): array {
     return self::$styles;
   }
 }

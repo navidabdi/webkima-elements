@@ -10,9 +10,9 @@ namespace WebkimaElements;
 
 class Enqueue {
 
-    public static $chosen_font = 'iranyekan';
+    public static string $chosen_font = 'iranyekan';
 
-    public static function init() {
+    public static function init(): void {
         // Main dynamic styles
         add_action('wp_enqueue_scripts', __CLASS__ . '::enqueueMainStyle');
 
@@ -45,24 +45,24 @@ class Enqueue {
         return $option[$key] ?? false;
     }
 
-    public static function enqueueMainStyle() {
+    public static function enqueueMainStyle(): void {
         wp_enqueue_style('webkima-main', WEBKIMA_ELEMENTS_URL . 'assets/css/main.php');
     }
 
-    public static function enqueueBackendFont() {
+    public static function enqueueBackendFont(): void {
         wp_enqueue_style(
             'webkima-elements-chosen-font', WEBKIMA_ELEMENTS_URL . 'assets/css/' . static::backendFont(static::$chosen_font)
         );
     }
 
-    public static function enqueueElementorEditor() {
+    public static function enqueueElementorEditor(): void {
         wp_enqueue_style(
             'webkima-elements-elementor-editor', WEBKIMA_ELEMENTS_URL . 'assets/css/elementor-editor.css'
         );
     }
 
     // Enqueue Template Editor
-    public static function enqueueWebkimaElementsTemplates() {
+    public static function enqueueWebkimaElementsTemplates(): void {
         wp_enqueue_script(
             'webkima-elements-template-js', WEBKIMA_ELEMENTS_URL . 'assets/js/editor.js'
         );

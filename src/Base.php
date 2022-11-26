@@ -12,7 +12,7 @@ use WebkimaElements\Widgets\Gotoup;
 
 class Base {
 
-    public static function register() {
+    public static function register(): void {
         require_once WEBKIMA_ELEMENTS_PATH . 'lib/options.php';
         add_action('admin_menu', __CLASS__ . '::webkimaElementsPanel');
 
@@ -29,7 +29,7 @@ class Base {
      * @since  1.0.0
      * @return void
      */
-    public static function activate() {
+    public static function activate(): void {
 
     }
 
@@ -39,7 +39,8 @@ class Base {
      * @since  1.0.0
      * @return void
      */
-    public static function deactivate() {
+    public static function deactivate(): void {
+
     }
 
     /**
@@ -48,10 +49,11 @@ class Base {
      * @since  1.0.0
      * @return void
      */
-    public static function uninstall() {
+    public static function uninstall(): void {
+
     }
 
-    public static function webkimaElementsPanel() {
+    public static function webkimaElementsPanel(): void {
         add_menu_page(
             __("Webkima Elements", "webkima-elements"),
             __("Webkima Elements", "webkima-elements"),
@@ -63,7 +65,7 @@ class Base {
         );
     }
 
-    public static function webkimaElementsPanelCallback() {
+    public static function webkimaElementsPanelCallback(): void {
         ?>
         <div class="wrap about-wrap" style="font-family:iranyekan">
         <h1><?php echo __("Welcome to Webkima Elements :)", "webkima-elements"); ?></h1>
