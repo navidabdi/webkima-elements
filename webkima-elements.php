@@ -1,13 +1,13 @@
 <?php
 /**
- * @package  WebkimaElements
+ * @package WebkimaElements
  * @author Nabi Abdi https://webkima.com
  */
 
 /**
  * Plugin Name: Webkima Elements
  * Plugin URI: https://webkima.com/
- * Description: A very light plugin for Persianization and installation of Persian fonts on the free and Pro Elementor plugin
+ * Description: A very light plugin for Personalization and installation of Persian fonts on the free and Pro Elementor plugin
  * Version: 1.3.0
  * Author: Webkima Academy
  * Author URI: https://webkima.com/
@@ -18,68 +18,44 @@
  * Elementor Pro tested up to: 3.7.7
  */
 
-if (!defined("ABSPATH")) {
-  die("You Can Not Access This File Directly!"); // Die if accessed directly
+namespace WebkimaElements;
+
+// Exit if accessed directly.
+if (!defined('ABSPATH')) {
+    header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+    exit;
 }
 
-if (file_exists(dirname(__FILE__) . "/we-autoloader/autoload.php")) {
-  require_once dirname(__FILE__) . "/we-autoloader/autoload.php";
-}
+define('WEBKIMA_ELEMENTS_DIR', plugin_dir_path( __FILE__ ));
+define('WEBKIMA_ELEMENTS_URL', plugin_dir_url( __FILE__ ));
+define('WEBKIMA_ELEMENTS_ASSETS_URL', WEBKIMA_ELEMENTS_URL . 'assets/');
 
 /**
- * Define CONSTANTS
- * @since    1.0.0
- */
-define("WEBKIMA_ELEMENTS_URL", plugin_dir_url(__FILE__));
-define("WEBKIMA_ELEMENTS_PATH", plugin_dir_path(__FILE__));
-define("WEBKIMA_ELEMENTS_NAME", plugin_basename(__FILE__));
-define("WEBKIMA_ELEMENTS_TEXT_DOMAIN", "webkima-elements");
-define("WEBKIMA_ELEMENTS_VER", "1.3.0");
-
-/**
- * Plugin Localization
- * @since    1.0.0
- */
-add_action("init", "localizationWebkimaElements");
-add_action("csf_init", "localizationWebkimaElements");
-function localizationWebkimaElements()
-{
-  $path = dirname(plugin_basename(__FILE__)) . "/languages/";
-  load_plugin_textdomain("webkima-elements", false, $path);
-}
-
-/**
- * The code that runs during plugin activation
+ * Loads PSR-4-style plugin classes.
  *
  * @since  1.0.0
  * @return void
  */
-function activate_webkima_elements()
-{
-  WebkimaElements\Base\Activate::activate();
-}
-register_activation_hook(__FILE__, "activate_webkima_elements");
-
-/**
- * The code that runs during plugin deactivation
- *
- * @since  1.0.0
- * @return void
- */
-function deactivate_webkima_elements()
-{
-  WebkimaElements\Base\Deactivate::deactivate();
-}
-register_deactivation_hook(__FILE__, "deactivate_webkima_elements");
-
-/**
- * The code that runs during plugin Services
- *
- * @since  1.0.0
- * @return void
- */
-if (class_exists("WebkimaElements\\Init")) {
-  WebkimaElements\Init::register_services();
+function classloader($class) {
+    static $ns_offset;
+    if (strpos($class, __NAMESPACE__ . '\\') === 0) {
+        if ($ns_offset === NULL) {
+            $ns_offset = strlen(__NAMESPACE__) + 1;
+        }
+        include __DIR__ . '/src/' . strtr(substr($class, $ns_offset), '\\', '/') . '.php';
+    }
 }
 
-require_once dirname(__FILE__) . "/inc/Elementor/TemplatesManager.php";
+spl_autoload_register(__NAMESPACE__ . '\classloader');
+
+
+register_activation_hook(__FILE__, __NAMESPACE__ . '\Base::activate');
+register_deactivation_hook(__FILE__, __NAMESPACE__ . '\Base::deactivate');
+register_uninstall_hook(__FILE__, __NAMESPACE__ . '\Base::uninstall');
+
+add_action('plugins_loaded', __NAMESPACE__ . '\Plugin::load_textdomain');
+add_action('init', __NAMESPACE__ . '\Plugin::pre_init', 0);
+add_action('init', __NAMESPACE__ . '\Plugin::init', 20);
+
+
+//require_once dirname(__FILE__) . "/inc/Elementor/TemplatesManager.php";
