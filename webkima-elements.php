@@ -60,6 +60,3 @@ register_uninstall_hook(__FILE__, __NAMESPACE__ . '\Base::uninstall');
 add_action('plugins_loaded', __NAMESPACE__ . '\Plugin::load_textdomain');
 add_action('init', __NAMESPACE__ . '\Plugin::pre_init', 0);
 add_action('init', __NAMESPACE__ . '\Plugin::init', 20);
-
-
-//require_once dirname(__FILE__) . "/inc/Elementor/TemplatesManager.php";

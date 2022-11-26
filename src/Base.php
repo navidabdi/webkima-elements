@@ -13,6 +13,8 @@ class Base {
     public static function register() {
         require_once WEBKIMA_ELEMENTS_PATH . 'lib/options.php';
         add_action('admin_menu', __CLASS__ . '::webkimaElementsPanel');
+
+        require_once WEBKIMA_ELEMENTS_PATH . 'inc/Elementor/TemplatesManager.php';
     }
 
     /**
