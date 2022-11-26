@@ -8,6 +8,7 @@
 
 namespace WebkimaElements;
 
+use WebkimaElements\Enqueue;
 
 class Plugin {
 
@@ -32,7 +33,7 @@ class Plugin {
      * @return void
      */
     public static function init() {
-
+        Enqueue::init();
     }
 
     /**

@@ -6,7 +6,7 @@
  */
 
 namespace WebkimaElements\Widgets;
-use WebkimaElements\Base\DynamicAssets;
+use WebkimaElements\DynamicAssets;
 
 class Gotoup
 {

@@ -16,7 +16,7 @@ final class Init
   public static function get_services()
   {
     $default_services = [
-      Base\Enqueue::class,
+      \WebkimaElements\Enqueue::class,
       Base\RegisterElementorWidgets::class,
     ];
     $extra_services = [];
