@@ -538,9 +538,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
     $menu_html = wp_nav_menu($args);
     ?>
     <div id="webkimael_mobile_menu_icon">
-    <?php \Elementor\Icons_Manager::render_icon($settings["icon"], [
-      "aria-hidden" => "true",
-    ]); ?>
+    <?php \Elementor\Icons_Manager::render_icon($settings["icon"], ["aria-hidden" => "true"]); ?>
     </div>
     <div id="webkimael_mobile_menu_main">
       <div id="webkimael_mobile_menu_dark_part"></div>
