@@ -1,6 +1,6 @@
 <?php
-require "../../../../../wp-blog-header.php";
-header("Content-type: text/css; charset:UTF-8");
+include '../../../../../wp-load.php';
+header('Content-type: text/css; charset:UTF-8');
 
 use WebkimaElements\DynamicAssets;
 

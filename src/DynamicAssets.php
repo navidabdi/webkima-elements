@@ -12,6 +12,8 @@ class DynamicAssets {
 
   public static $styles = [];
 
+  public static $root = ABSPATH;
+
   public static function printStyles() {
     return self::$styles;
   }

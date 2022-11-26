@@ -20,15 +20,18 @@
 
 namespace WebkimaElements;
 
+use WebkimaElements\Base;
+
 // Exit if accessed directly.
 if (!defined('ABSPATH')) {
     header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
     exit;
 }
 
-define('WEBKIMA_ELEMENTS_DIR', plugin_dir_path( __FILE__ ));
+define('WEBKIMA_ELEMENTS_PATH', plugin_dir_path( __FILE__ ));
 define('WEBKIMA_ELEMENTS_URL', plugin_dir_url( __FILE__ ));
 define('WEBKIMA_ELEMENTS_ASSETS_URL', WEBKIMA_ELEMENTS_URL . 'assets/');
+define("WEBKIMA_ELEMENTS_VER", "1.3.0");
 
 /**
  * Loads PSR-4-style plugin classes.
@@ -48,6 +51,7 @@ function classloader($class) {
 
 spl_autoload_register(__NAMESPACE__ . '\classloader');
 
+Base::register();
 
 register_activation_hook(__FILE__, __NAMESPACE__ . '\Base::activate');
 register_deactivation_hook(__FILE__, __NAMESPACE__ . '\Base::deactivate');

@@ -45,5 +45,4 @@ class Plugin {
     public static function load_textdomain() {
         load_plugin_textdomain(static::L10N, false, static::L10N . '/languages/');
     }
-
 }
