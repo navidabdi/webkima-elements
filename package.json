@@ -1,0 +1,30 @@
+{
+  "name": "webkima-elements",
+  "version": "1.0.0",
+  "description": "=== Webkima Elements === author: Webkima Academy Contributors: nabiabdi Tags: elementor,persian,parsi,farsi,iran,iranian,rtl,fa_IR,المنتور Requires at least: 5.0 Tested up to: 6.1.1 Requires PHP: 5.6 Stable tag: 1.4.0 License: GPLv2 or later License URI: http://www.gnu.org/licenses/gpl-2.0.html",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/navidabdi/webkima-elements.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/navidabdi/webkima-elements/issues"
+  },
+  "homepage": "https://github.com/navidabdi/webkima-elements#readme",
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  },
+  "dependencies": {
+    "sass": "^1.56.1"
+  }
+}
