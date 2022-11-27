@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Webkima Elements\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-13 15:22+0000\n"
+"POT-Creation-Date: 2022-11-27 05:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -18,60 +18,83 @@ msgstr ""
 
 #. Description of the plugin
 msgid ""
-"A very light plugin for Persianization and installation of Persian fonts on "
+"A very light plugin for Personalization and installation of Persian fonts on "
 "the free and Pro Elementor plugin"
 msgstr ""
 
-#: inc/options.php:158
+#: lib/options.php:240
 msgid "About"
 msgstr ""
 
-#: inc/options.php:147
+#: lib/options.php:146
 msgid "Activate Font On Elementor Editor"
 msgstr ""
 
-#: inc/options.php:137
+#: lib/options.php:136
 msgid "Activate Font On The Front-End"
 msgstr ""
 
-#: inc/options.php:124
+#: lib/options.php:123
 msgid "Activate Font On WordPress Dashboard"
 msgstr ""
 
-#: inc/options.php:122 inc/options.php:135 inc/options.php:145
+#: lib/options.php:121 lib/options.php:134 lib/options.php:144
+#: lib/options.php:163
 msgid "active"
 msgstr ""
 
-#: inc/options.php:110
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:241
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:447
+msgid "Background Color Hover"
+msgstr ""
+
+#: lib/options.php:109
 msgid "Chose a font"
 msgstr ""
 
-#: inc/options.php:106
+#: lib/options.php:105
 msgid "Chose a font to use as main font on all pages of the website."
 msgstr ""
 
-#: inc/options.php:105
+#: lib/options.php:104
 msgid "Chose your favoriate font"
 msgstr ""
 
-#: inc/options.php:123 inc/options.php:136 inc/options.php:146
+#: lib/options.php:122 lib/options.php:135 lib/options.php:145
+#: lib/options.php:164
 msgid "deactive"
 msgstr ""
 
-#: inc/options.php:172
+#: lib/options.php:254
 msgid "Developed by Nabi Abdi and Webkima Team."
 msgstr ""
 
-#: inc/options.php:144
+#: lib/options.php:143
 msgid "Font On Elementor Editor"
 msgstr ""
 
-#: inc/options.php:134
+#: lib/options.php:133
 msgid "Font On The Front-End"
 msgstr ""
 
-#: inc/options.php:121
+#: lib/options.php:120
 msgid "Font On WordPress Dashboard"
+msgstr ""
+
+#. 1: Link open tag, 2: Link closing tag.
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:78
+#, php-format
+msgid "Go to the %1$sMenus screen%2$s to create one."
+msgstr ""
+
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:61
+#, php-format
+msgid "Go to the %1$sMenus screen%2$s to manage your menus."
+msgstr ""
+
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:251
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:457
+msgid "Horizontal Padding"
 msgstr ""
 
 #. URI of the plugin
@@ -79,35 +102,81 @@ msgstr ""
 msgid "https://webkima.com/"
 msgstr ""
 
-#: inc/options.php:112
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:103
+msgid "Icon Color"
+msgstr ""
+
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:341
+msgid "Icon Line Height"
+msgstr ""
+
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:111
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:315
+msgid "Icon Size"
+msgstr ""
+
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:367
+msgid "Icon Space"
+msgstr ""
+
+#: lib/options.php:111
 msgid "iranyekan"
 msgstr ""
 
-#: inc/options.php:92
+#: lib/options.php:91
 msgid "main settings"
 msgstr ""
 
-#: inc/Base/BaseController.php:52
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:16
+msgid "Mobile Menu"
+msgstr ""
+
+#: src/Base.php:72
 msgid "More feature with better performance"
 msgstr ""
 
-#: inc/options.php:98
+#: lib/options.php:97
 msgid "plugin version"
 msgstr ""
 
-#: inc/Base/BaseController.php:61
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:402
+msgid "Second Layar Menu"
+msgstr ""
+
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:408
+msgid "second Layar Typography"
+msgstr ""
+
+#: src/Base.php:81
 msgid "Settings"
 msgstr ""
 
-#: inc/options.php:163
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:141
+msgid "Show Left or Right"
+msgstr ""
+
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:136
+msgid "Side Menu"
+msgstr ""
+
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:74
+msgid "There are no menus in your site."
+msgstr ""
+
+#: lib/options.php:245
 msgid ""
 "This plugin is developed by Webkima Academy team.\n"
 "       we wanna add a lot of cool feaure to this plugin as soon as posible.\n"
 "       Notice: We try our best to keep this plugin as fast as we can."
 msgstr ""
 
-#: inc/options.php:113
+#: lib/options.php:112
 msgid "vazir"
+msgstr ""
+
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:281
+#: src/Elementor/Widgets/mobile-menu/WebkimaELMobileMenu.php:487
+msgid "Vertical Padding"
 msgstr ""
 
 #. Author of the plugin
@@ -115,12 +184,92 @@ msgid "Webkima Academy"
 msgstr ""
 
 #. Name of the plugin
-#: inc/options.php:27 inc/options.php:31 inc/options.php:61 inc/options.php:63
-#: inc/Elementor/TemplatesSource.php:25 inc/Base/BaseController.php:38
-#: inc/Base/BaseController.php:39
+#: lib/options.php:26 lib/options.php:30 lib/options.php:60 lib/options.php:62
+#: src/Base.php:58 src/Base.php:59 src/RegisterElementorWidgets.php:29
+#: src/Elementor/TemplatesSource.php:27
 msgid "Webkima Elements"
 msgstr ""
 
-#: inc/Base/BaseController.php:51
+#: src/Base.php:71
 msgid "Welcome to Webkima Elements :)"
+msgstr ""
+
+#: lib/options.php:180
+msgid "انتخاب سایز"
+msgstr ""
+
+#: lib/options.php:184
+msgid "بزرگ"
+msgstr ""
+
+#: lib/options.php:156 lib/options.php:162
+msgid "دکمه بازگشت به بالا"
+msgstr ""
+
+#: lib/options.php:192
+msgid "راست"
+msgstr ""
+
+#: lib/options.php:209
+msgid "رنگ آیکون"
+msgstr ""
+
+#: lib/options.php:210
+msgid "رنگ آیکون را انتخاب کنید"
+msgstr ""
+
+#: lib/options.php:217
+msgid "رنگ بوردر"
+msgstr ""
+
+#: lib/options.php:218
+msgid "رنگ بوردر را انتخاب کنید"
+msgstr ""
+
+#: lib/options.php:175
+msgid "سایز دکمه"
+msgstr ""
+
+#: lib/options.php:176
+msgid "سایز دکمه بازگشت به بالا را انتخاب کنید"
+msgstr ""
+
+#: lib/options.php:165
+msgid "فعال کردن دکمه بازگشت به بالا در تمامی صفحات سایت"
+msgstr ""
+
+#: lib/options.php:183
+msgid "متوسط"
+msgstr ""
+
+#: lib/options.php:191
+msgid "مکان دکمه"
+msgstr ""
+
+#: lib/options.php:194
+msgid "مکان دکمه در صفحه را مشخص کنید"
+msgstr ""
+
+#: lib/options.php:226
+msgid "میزان گردی گوشه های دکمه بازگشت به بالا را انتخاب کنید."
+msgstr ""
+
+#: lib/options.php:201
+msgid "پس زمینه دکمه"
+msgstr ""
+
+#: lib/options.php:202
+msgid "پس زمینه دکمه را انتخاب کنید."
+msgstr ""
+
+#: lib/options.php:193
+msgid "چپ"
+msgstr ""
+
+#: lib/options.php:182
+msgid "کوچک"
+msgstr ""
+
+#: lib/options.php:225
+msgid "گردی گوشه‌ها"
 msgstr ""

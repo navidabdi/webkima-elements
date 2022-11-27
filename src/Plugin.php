@@ -44,6 +44,6 @@ class Plugin {
      * @return void
      */
     public static function loadTextDomain(): void {
-        load_plugin_textdomain(static::L10N, false, static::L10N . '/languages/');
+        load_plugin_textdomain('webkima-elements', false, 'webkima-elements/languages/');
     }
 }

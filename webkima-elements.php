@@ -51,12 +51,14 @@ function classloader($class): void {
 
 spl_autoload_register(__NAMESPACE__ . '\classloader');
 
-Base::register();
 
 register_activation_hook(__FILE__, __NAMESPACE__ . '\Base::activate');
 register_deactivation_hook(__FILE__, __NAMESPACE__ . '\Base::deactivate');
 register_uninstall_hook(__FILE__, __NAMESPACE__ . '\Base::uninstall');
 
+add_action("csf_init", __NAMESPACE__ . '\Plugin::loadTextDomain');
 add_action('plugins_loaded', __NAMESPACE__ . '\Plugin::loadTextDomain');
+
+Base::register();
 add_action('init', __NAMESPACE__ . '\Plugin::pre_init', 0);
 add_action('init', __NAMESPACE__ . '\Plugin::init', 20);
