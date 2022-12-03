@@ -6,11 +6,11 @@ class CssMinifier {
 
 	private array $fileNames = [];
 
-	function __construct($fileNames){
+	function __construct($fileNames) {
 		$this->fileNames = $fileNames;
 	}
 
-	private function fileValidator($fileName){
+	private function fileValidator($fileName) {
 
 		$fileParts = explode('.',$fileName);
 		$fileExtension  = end($fileParts);
@@ -29,7 +29,7 @@ class CssMinifier {
 		header('Content-Type: text/css');
 	}
 
-	public function minify(){
+	public function minify() {
 		$this->setHeaders();
 		$minifiedCss = "";
 		$fileNames = $this->fileNames;
@@ -50,7 +50,7 @@ class CssMinifier {
 
 	//Credits for minify_css @ https://gist.github.com/Rodrigo54/93169db48194d470188f
 	private function minify_css($input) {
-		if(trim($input) === "") return $input;
+		if (trim($input) === "") return $input;
 		return preg_replace(
 			array(
 				// Remove comment(s)

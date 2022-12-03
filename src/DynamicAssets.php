@@ -7,25 +7,31 @@
  */
 
 namespace WebkimaElements;
+
 use WebkimaElements\CssMinifier;
 
 class DynamicAssets {
 
-  public static array $styles = [];
+	public static array $styles = [];
 
-  public static function printStyles(): array {
-	  $fileNames  = [
-			WEBKIMA_ELEMENTS_PATH . 'assets/css/iranyekan-font.css',
-		  WEBKIMA_ELEMENTS_PATH . 'assets/css/vazir-font.css',
-	  ];
+	public static function printStyles(): void {
+		$cssMinifier = new CssMinifier( static::$styles );
+		$minifiedCSS = $cssMinifier->minify();
 
-	  $myfile = fopen(WEBKIMA_ELEMENTS_PATH . 'assets/css/main.css', "w") or die("Unable to open file!");
-//	  $txt = self::$styles['gotoup'];
-	  $cssMinifier = new CssMinifier($fileNames);
-	  $txt = $cssMinifier->minify();
-	  fwrite($myfile, $txt);
-	  fclose($myfile);
+		$main_css_file = fopen( WEBKIMA_ELEMENTS_PATH . 'assets/css/main.css', "w" )
+		or die( "Unable to open main.css file!" );
 
-    return self::$styles;
-  }
+		fwrite( $main_css_file, $minifiedCSS );
+		fclose( $main_css_file );
+	}
+
+	public static function generateStyle($css_file_name, $style): void {
+		$css_file = fopen( WEBKIMA_ELEMENTS_PATH . 'assets/widgets/css/' . $css_file_name, "w" )
+		or die( "Unable to open file!" );
+
+		fwrite( $css_file, $style );
+		fclose( $css_file );
+
+		static::$styles[] = WEBKIMA_ELEMENTS_PATH . 'assets/widgets/css/' . $css_file_name;
+	}
 }
