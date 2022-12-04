@@ -9,6 +9,8 @@
 namespace WebkimaElements;
 
 use WebkimaElements\Widgets\Gotoup;
+use WebkimaElements\Enqueue;
+use WebkimaElements\DynamicAssets;
 
 class Base {
 
@@ -23,6 +25,11 @@ class Base {
         }
     }
 
+	public static function isOptionActivated(string $key): bool {
+		$option = get_option('webkima_elements');
+		return $option[$key] ?? false;
+	}
+
     /**
      * Registers activation hook callback.
      *
@@ -30,7 +37,7 @@ class Base {
      * @return void
      */
     public static function activate(): void {
-
+        DynamicAssets::generateStyleBaseOption();
     }
 
     /**
