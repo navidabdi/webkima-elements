@@ -237,39 +237,47 @@ if ( class_exists( "EFS" ) ) {
 	] );
 
 	EFS::createSection( $prefix, [
-		"title"  => __( "Elementor widgets", "webkima-elements" ),
+		"title"  => __( "ویجت‌های المنتور", "webkima-elements" ),
 		"icon"   => "fa fa-cubes",
 		"fields" => [
 			[
 				"type"    => "content",
 				"content" => '<strong>'
-				             . __("Elementor widget settings.", "webkima-elements")
+				             . __("تنظیمات ویجت‌های المنتور وبکیما المنت", "webkima-elements")
 				             . '</strong><br /><br />'
-				             . __("With this settings you can control all of the Elementor widgets.", "webkima-elements"),
+				             . __("در این بخش می‌توانید تمامی ویجت‌های وبکیما المنت که داخل ویرایشگر المنتور می‌توانید از آنها استفاده کنید را فعال و غیرفعال کنید.", "webkima-elements"),
 			],
 			[
 				'id'       => 'we_el_widgets',
-				'type'     => __('switcher', "webkima-elements"),
-				'title'    => __('Active elementor widgets', "webkima-elements"),
-				'text_on'  => __( 'On', "webkima-elements" ),
-				'text_off' => __( 'Off', "webkima-elements" ),
+				'type'     => 'switcher',
+				'title'    => __('فعالسازی تمامی ویجت‌های المنتور', "webkima-elements"),
+				"subtitle" => __(
+					"با این سوئیچ می‌توانید تمامی ویجت‌های المنتوری وبکیما المنت را به صورت یکجا فعال یا غیرفعال کنید.",
+					"webkima-elements"
+				),
+				'text_on'  => __( 'فعال', "webkima-elements" ),
+				'text_off' => __( 'غیرفعال', "webkima-elements" ),
 				"default"    => true,
 			],
 			[
 				'id'       => 'we_el_widget_mobile_menu',
-				'type'     => __('switcher', "webkima-elements"),
-				'title'    => __('Active mobile menu widget', "webkima-elements"),
-				'text_on'  => __( 'On', "webkima-elements" ),
-				'text_off' => __( 'Off', "webkima-elements" ),
+				'type'     => 'switcher',
+				'title'    => __('فعالسازی ویجت منوی موبایل', "webkima-elements"),
+				"subtitle" => __(
+					"ویجت منوی موبایل را فعال یا غیرفعال کنید.",
+					"webkima-elements"
+				),
+				'text_on'  => __( 'فعال', "webkima-elements" ),
+				'text_off' => __( 'غیرفعال', "webkima-elements" ),
 				"default"    => true,
 				'dependency' => array( 'we_el_widgets', '==', 'true' )
 			],
 			[
 				'id'       => 'we_el_widget_another_one',
-				'type'     => __('switcher', "webkima-elements"),
+				'type'     => 'switcher',
 				'title'    => __('Active another one widget', "webkima-elements"),
-				'text_on'  => __( 'On', "webkima-elements" ),
-				'text_off' => __( 'Off', "webkima-elements" ),
+				'text_on'  => __( 'فعال', "webkima-elements" ),
+				'text_off' => __( 'غیرفعال', "webkima-elements" ),
 				"default"    => true,
 				'dependency' => array( 'we_el_widgets', '==', 'true' )
 			],
