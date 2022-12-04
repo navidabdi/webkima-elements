@@ -9,6 +9,7 @@
 namespace WebkimaElements;
 
 use WebkimaElements\Widgets\Gotoup;
+use WebkimaElements\Enqueue;
 
 class Base {
 

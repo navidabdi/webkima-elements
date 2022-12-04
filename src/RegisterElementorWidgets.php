@@ -39,11 +39,10 @@ class RegisterElementorWidgets {
 
 	public static function dynamicStyles(): void {
 		if ( Base::isOptionActivated( 'we_el_widget_mobile_menu' ) ) {
-			DynamicAssets::$styles[] = WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'mobile-menu.css';
-			require_once static::$widgets_path . 'style.php';
+//			DynamicAssets::$styles[] = WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'mobile-menu.css';
 		}
 		if ( Base::isOptionActivated( 'we_el_widget_another_one' ) ) {
-			DynamicAssets::$styles[] = WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'another-widget.css';
+//			DynamicAssets::$styles[] = WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'another-widget.css';
 		}
 	}
 

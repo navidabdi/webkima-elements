@@ -27,11 +27,6 @@ class Enqueue {
             add_action('admin_enqueue_scripts', __CLASS__ . '::enqueueBackendFont');
         }
 
-        // Add frontend Font
-        if (Base::isOptionActivated('we_font_frontend')) {
-            static::frontendFont(static::$chosen_font);
-        }
-
         if (Base::isOptionActivated('we_font_elementor_editor')) {
             add_action('elementor/editor/before_enqueue_scripts', __CLASS__ . '::enqueueElementorEditor');
             add_action('elementor/app/init', __CLASS__ . '::enqueueElementorEditor');
@@ -80,17 +75,4 @@ class Enqueue {
         return $font_css_file;
     }
 
-    public static function frontendFont($option) {
-        switch ($option) {
-            case 'iranyekan':
-                DynamicAssets::$styles[] = WEBKIMA_ELEMENTS_PATH . 'assets/css/iranyekan-font.css';
-                break;
-            case 'vazir':
-	              DynamicAssets::$styles[] = WEBKIMA_ELEMENTS_PATH . 'assets/css/vazir-font.css';
-                break;
-            default:
-	             DynamicAssets::$styles[] = WEBKIMA_ELEMENTS_PATH . 'assets/css/iranyekan-font.css';
-        }
-//        return DynamicAssets::$styles;
-    }
 }

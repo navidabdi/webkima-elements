@@ -43,8 +43,8 @@ if ( class_exists( "EFS" ) ) {
 		"show_in_customizer" => false,
 
 		"show_search"             => false,
-		"show_reset_all"          => true,
-		"show_reset_section"      => true,
+		"show_reset_all"          => false,
+		"show_reset_section"      => false,
 		"show_footer"             => false,
 		"show_all_options"        => true,
 		"show_form_warning"       => true,

@@ -9,6 +9,7 @@
 namespace WebkimaElements;
 
 use WebkimaElements\Enqueue;
+use WebkimaElements\Base;
 
 class Plugin {
 
@@ -35,7 +36,7 @@ class Plugin {
     public static function init(): void {
 	    Enqueue::init();
 	    RegisterElementorWidgets::init();
-	    DynamicAssets::printStyles();
+	    DynamicAssets::init();
     }
 
     /**
