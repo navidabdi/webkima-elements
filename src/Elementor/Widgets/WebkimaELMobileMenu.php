@@ -173,7 +173,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
 
     $this->add_group_control(\Elementor\Group_Control_Background::get_type(), [
       "name" => "aside_background",
-      "label" => esc_html__("Background Overlay", "textdomain"),
+      "label" => esc_html__("Background Overlay", "elementor"),
       "types" => ["classic", "gradient"],
       "selector" => "{{WRAPPER}} .webkimael_mobile_menu_aside",
     ]);

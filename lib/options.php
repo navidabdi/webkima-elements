@@ -273,9 +273,13 @@ if ( class_exists( "EFS" ) ) {
 				'dependency' => array( 'we_el_widgets', '==', 'true' )
 			],
 			[
-				'id'       => 'we_el_widget_another_one',
+				'id'       => 'we_el_widget_post_carousel',
 				'type'     => 'switcher',
-				'title'    => __('Active another one widget', "webkima-elements"),
+				'title'    => __('فعالسازی ویجت اسلایدر مقالات', "webkima-elements"),
+				"subtitle" => __(
+					"ویجت اسلایدر مقالات را فعال یا غیرفعال کنید.",
+					"webkima-elements"
+				),
 				'text_on'  => __( 'فعال', "webkima-elements" ),
 				'text_off' => __( 'غیرفعال', "webkima-elements" ),
 				"default"    => true,
