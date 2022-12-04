@@ -39,7 +39,9 @@ class DynamicAssets {
 
 		foreach ($options_to_add_css_files as $key => $css_file_path) {
 			if (Base::isOptionActivated($key)) {
-				DynamicAssets::$styles[] = $css_file_path;
+				if (self::isFileExistReadable($css_file_path)) {
+					DynamicAssets::$styles[] = $css_file_path;
+				}
 			}
 		}
 
@@ -71,5 +73,9 @@ class DynamicAssets {
 			$font_style_path = WEBKIMA_ELEMENTS_PATH . 'assets/css/vazir-font.css';
 		}
 		return $font_style_path;
+	}
+
+	public static function isFileExistReadable($file_path): bool {
+		return file_exists($file_path) && is_readable($file_path);
 	}
 }
