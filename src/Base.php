@@ -10,6 +10,7 @@ namespace WebkimaElements;
 
 use WebkimaElements\Widgets\Gotoup;
 use WebkimaElements\Enqueue;
+use WebkimaElements\DynamicAssets;
 
 class Base {
 
@@ -36,7 +37,7 @@ class Base {
      * @return void
      */
     public static function activate(): void {
-
+        DynamicAssets::generateStyleBaseOption();
     }
 
     /**

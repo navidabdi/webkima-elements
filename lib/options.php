@@ -166,7 +166,7 @@ if ( class_exists( "EFS" ) ) {
 					"فعال کردن دکمه بازگشت به بالا در تمامی صفحات سایت",
 					"webkima-elements"
 				),
-				"default"    => false,
+				"default"    => true,
 				"text_width" => 70,
 			],
 			[
@@ -253,6 +253,7 @@ if ( class_exists( "EFS" ) ) {
 				'title'    => __('Active elementor widgets', "webkima-elements"),
 				'text_on'  => __( 'On', "webkima-elements" ),
 				'text_off' => __( 'Off', "webkima-elements" ),
+				"default"    => true,
 			],
 			[
 				'id'       => 'we_el_widget_mobile_menu',
@@ -260,6 +261,7 @@ if ( class_exists( "EFS" ) ) {
 				'title'    => __('Active mobile menu widget', "webkima-elements"),
 				'text_on'  => __( 'On', "webkima-elements" ),
 				'text_off' => __( 'Off', "webkima-elements" ),
+				"default"    => true,
 				'dependency' => array( 'we_el_widgets', '==', 'true' )
 			],
 			[
@@ -268,6 +270,7 @@ if ( class_exists( "EFS" ) ) {
 				'title'    => __('Active another one widget', "webkima-elements"),
 				'text_on'  => __( 'On', "webkima-elements" ),
 				'text_off' => __( 'Off', "webkima-elements" ),
+				"default"    => true,
 				'dependency' => array( 'we_el_widgets', '==', 'true' )
 			],
 		],
