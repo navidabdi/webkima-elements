@@ -37,7 +37,7 @@ class Base {
      * @return void
      */
     public static function activate(): void {
-        DynamicAssets::generateStyleBaseOption();
+        DynamicAssets::generateStylesAdnJavaScripts();
     }
 
     /**
