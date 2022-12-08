@@ -551,7 +551,7 @@ class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
         .webkimael_mobile_menu_aside {left: 0;right: auto;transform: translateX(-100%);}
       <?php endif; ?>
     </style>
-    <script>!function(){const e=document.getElementById("webkimael_mobile_menu_icon"),t=document.getElementById("webkimael_mobile_menu_dark_part"),n=document.getElementById("webkimael_mobile_menu_main"),c=()=>n.classList.toggle("active");e.addEventListener("click",c),t.addEventListener("click",c)}(),function(){const e=document.querySelectorAll(".menu-item-has-children a");console.log(e),e.forEach((e=>{e.addEventListener("click",(()=>{e.parentElement.classList.toggle("active")}))}))}();</script>
+    <script>!function(){const e=document.getElementById("webkimael_mobile_menu_icon"),t=document.getElementById("webkimael_mobile_menu_dark_part"),n=document.getElementById("webkimael_mobile_menu_main"),c=()=>n.classList.toggle("active");e.addEventListener("click",c),t.addEventListener("click",c)}(),function(){const e=document.querySelectorAll(".menu-item-has-children a");e.forEach((e=>{e.addEventListener("click",(()=>{e.parentElement.classList.toggle("active")}))}))}();</script>
 		<?php
   }
 }
