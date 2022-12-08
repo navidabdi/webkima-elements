@@ -17,6 +17,7 @@ class DynamicAssets {
 
 	public static function init(): void {
 		add_action('csf_webkima_elements_save_after', __CLASS__ . '::generateStyleBaseOption');
+		self::generateStyleBaseOption();
 	}
 
 	public static function generateStyleBaseOption(): void {
@@ -29,7 +30,7 @@ class DynamicAssets {
 		if (Base::isOptionActivated('we_el_widgets')) {
 			$options_to_add_css_files += [
 				'we_el_widget_mobile_menu' => WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'mobile-menu.css',
-				'we_el_widget_another_one' => WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'another-widget.css',
+				'we_el_widget_post_carousel' => WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'post-carousel.css',
 			];
 		}
 
