@@ -17,7 +17,7 @@ class DynamicAssets {
 
 	public static function init(): void {
 		add_action('csf_webkima_elements_save_after', __CLASS__ . '::generateStyleBaseOption');
-		self::generateStyleBaseOption();
+//		self::generateStyleBaseOption();
 	}
 
 	public static function generateStyleBaseOption(): void {
@@ -29,13 +29,13 @@ class DynamicAssets {
 
 		if (Base::isOptionActivated('we_el_widgets')) {
 			$options_to_add_css_files += [
-				'we_el_widget_mobile_menu' => WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'mobile-menu.css',
-				'we_el_widget_post_carousel' => WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'post-carousel.css',
+				'we_el_widget_mobile_menu' => WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'mobile-menu.min.css',
+				'we_el_widget_post_carousel' => WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'post-carousel.min.css',
 			];
 		}
 
 		$options_to_add_css_files += [
-			'we_goup_btn' => WEBKIMA_ELEMENTS_PATH . 'assets/widgets/css/gotoup.css',
+			'we_goup_btn' => WEBKIMA_ELEMENTS_PATH . 'assets/src/css/gotoup.scss',
 		];
 
 		foreach ($options_to_add_css_files as $key => $css_file_path) {
@@ -50,18 +50,16 @@ class DynamicAssets {
 	}
 
 	public static function printStyles(): void {
-		$cssMinifier = new CssMinifier( static::$styles );
-		$minifiedCSS = $cssMinifier->minify();
-
 		$main_css_file = fopen( WEBKIMA_ELEMENTS_PATH . 'assets/css/main.css', "w" )
 		or die( "Unable to open main.css file!" );
-
-		fwrite( $main_css_file, $minifiedCSS );
+		foreach (static::$styles as $style) {
+			fwrite( $main_css_file, file_get_contents($style) );
+		}
 		fclose( $main_css_file );
 	}
 
 	public static function generateStyle($css_file_name, $style): void {
-		$css_file = fopen( WEBKIMA_ELEMENTS_PATH . 'assets/widgets/css/' . $css_file_name, "w" )
+		$css_file = fopen( WEBKIMA_ELEMENTS_PATH . 'assets/src/css/' . $css_file_name, "w" )
 		or die( "Unable to open file!" );
 
 		fwrite( $css_file, $style );

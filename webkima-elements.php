@@ -29,7 +29,7 @@ if (!defined('ABSPATH')) {
 }
 
 define('WEBKIMA_ELEMENTS_PATH', plugin_dir_path( __FILE__ ));
-define('WEBKIMA_ELEMENTS_WIDGET_CSS_PATH', WEBKIMA_ELEMENTS_PATH . 'assets/widgets/css/');
+define('WEBKIMA_ELEMENTS_WIDGET_CSS_PATH', WEBKIMA_ELEMENTS_PATH . 'assets/dist/css/');
 define('WEBKIMA_ELEMENTS_URL', plugin_dir_url( __FILE__ ));
 define('WEBKIMA_ELEMENTS_ASSETS_URL', WEBKIMA_ELEMENTS_URL . 'assets/');
 define("WEBKIMA_ELEMENTS_VER", "1.5.0");
