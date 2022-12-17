@@ -33,6 +33,9 @@ class RegisterElementorWidgets {
 			require_once static::$widgets_path . 'WebkimaELPostCarousel.php';
 			$widgets_manager->register(new \WebkimaELPostCarousel());
 		}
+
+		require_once static::$widgets_path . 'WebkimaELMetroList.php';
+		$widgets_manager->register(new \WebkimaELMetroList());
 	}
 
 	public static function addElementorWidgetCategory($elements_manager): void {
