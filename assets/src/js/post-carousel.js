@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
   (function () {
     const carouselItems = document.querySelectorAll('.webkima-el-carousel-item'),
       moveRight = document.querySelector('#moveRight'),
@@ -33,4 +32,3 @@ document.addEventListener('DOMContentLoaded', () => {
       carouselItems[slide].classList.add('active');
     }
   })();
-});

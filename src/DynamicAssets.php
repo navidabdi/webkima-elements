@@ -62,7 +62,7 @@ class DynamicAssets {
 		if (Base::isOptionActivated('we_el_widgets')) {
 			$options_to_add_js_files += [
 				'we_el_widget_mobile_menu' => WEBKIMA_ELEMENTS_WIDGET_JS_PATH . 'mobile-menu.min.js',
-				'we_el_widget_post_carousel' => WEBKIMA_ELEMENTS_WIDGET_JS_PATH . 'post-carousel.min.js',
+//				'we_el_widget_post_carousel' => WEBKIMA_ELEMENTS_WIDGET_JS_PATH . 'post-carousel.min.js',
 			];
 		}
 

@@ -383,7 +383,9 @@ class WebkimaELPostCarousel extends \Elementor\Widget_Base {
                 </div>
 					<?php endwhile; ?>
 				<?php endif; ?>
-
+<script>
+  !function(){const e=document.querySelectorAll(".webkima-el-carousel-item"),t=document.querySelector("#moveRight"),c=document.querySelector("#moveLeft");e[0].classList.add("active");let i=e.length,l=0;function n(t,c){let n=l;c>i-1&&(n=0,l=0),c<0&&(n=i-1,l=i-1),e[t].classList.remove("active"),e[n].classList.add("active")}t.addEventListener("click",(function(){let e=l;l+=1,n(e,l)})),c.addEventListener("click",(function(){let e=l;l-=1,n(e,l)}))}();
+</script>
       </div>
 		<?php
 	}
