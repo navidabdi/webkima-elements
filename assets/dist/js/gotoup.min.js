@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(()=>{!function(){let e=document.getElementById("gotoup");window.onscroll=function(){document.body.scrollTop>20||document.documentElement.scrollTop>20?e.classList.add("active"):e.classList.remove("active")},e.addEventListener("click",(()=>{document.body.scrollTop=0,document.documentElement.scrollTop=0}))}()}));
