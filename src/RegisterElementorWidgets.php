@@ -23,20 +23,20 @@ class RegisterElementorWidgets {
 
 	}
 
+	public static function getWidgetIDs(): array {
+		return [
+			'we_el_widget_mobile_menu' => 'WebkimaELMobileMenu',
+			'we_el_widget_post_carousel' => 'WebkimaELPostCarousel',
+			'we_el_widget_metro_list' => 'WebkimaELMetroList'
+		];
+	}
+
 	public static function registerElementorWidgets($widgets_manager): void {
-		if (Base::isOptionActivated('we_el_widget_mobile_menu')) {
-			require_once static::$widgets_path . 'WebkimaELMobileMenu.php';
-			$widgets_manager->register(new \Webkima_EL_Mobile_Menu());
-		}
-
-		if (Base::isOptionActivated('we_el_widget_post_carousel')) {
-			require_once static::$widgets_path . 'WebkimaELPostCarousel.php';
-			$widgets_manager->register(new \WebkimaELPostCarousel());
-		}
-
-		if (Base::isOptionActivated('we_el_widget_metro_list')) {
-			require_once static::$widgets_path . 'WebkimaELMetroList.php';
-			$widgets_manager->register(new \WebkimaELMetroList());
+		foreach (self::getWidgetIDs() as $key => $widget_class_name) {
+			if (Base::isOptionActivated($key)) {
+				require_once self::$widgets_path . $widget_class_name .'.php';
+				$widgets_manager->register(new $widget_class_name);
+			}
 		}
 
 	}

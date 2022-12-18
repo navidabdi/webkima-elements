@@ -4,7 +4,7 @@ if (!defined("ABSPATH")) {
   exit(); // Exit if accessed directly
 }
 
-class Webkima_EL_Mobile_Menu extends \Elementor\Widget_Base
+class WebkimaELMobileMenu extends \Elementor\Widget_Base
 {
   protected int $nav_menu_index = 1;
 
