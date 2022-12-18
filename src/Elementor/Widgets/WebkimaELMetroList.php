@@ -138,7 +138,7 @@ class WebkimaELMetroList extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'style_content_section',
 			[
-				'label' => esc_html__('List Style', 'webkima-elements'),
+				'label' => esc_html__('استایل محتوای مترو', 'webkima-elements'),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -146,7 +146,7 @@ class WebkimaELMetroList extends \Elementor\Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => esc_html__('Color', 'webkima-elements'),
+				'label'     => esc_html__('Color', 'elementor'),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .webkima-el-metro' => 'color: {{VALUE}};',
@@ -240,6 +240,29 @@ class WebkimaELMetroList extends \Elementor\Widget_Base {
 			]
 		);
 
+		$this->add_responsive_control(
+			'metro_size',
+			[
+				'label'   => esc_html__('Size', 'elementor'),
+				'type'    => \Elementor\Controls_Manager::CHOOSE,
+				'options' => [
+					'small'  => [
+						'title' => esc_html__('Small', 'elementor'),
+						'icon'  => 'eicon-zoom-in',
+					],
+					'medium' => [
+						'title' => esc_html__('Medium', 'elementor'),
+						'icon'  => 'eicon-zoom-in',
+					],
+					'large'  => [
+						'title' => esc_html__('Large', 'elementor'),
+						'icon'  => 'eicon-zoom-in',
+					],
+				],
+				'default' => 'small',
+			]
+		);
+
 		$this->add_control(
 			'marker_spacing',
 			[
@@ -270,6 +293,80 @@ class WebkimaELMetroList extends \Elementor\Widget_Base {
 			]
 		);
 
+		$this->add_control('hr1', [
+			'type' => \Elementor\Controls_Manager::DIVIDER,
+		]);
+
+		$this->add_control(
+			'metro_line',
+			[
+				'label'        => esc_html__('نمایش بوردر بین مترو', 'webkima-elements'),
+				'type'         => \Elementor\Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__('روشن', 'webkima-elements'),
+				'label_off'    => esc_html__('خاموش', 'webkima-elements'),
+				'return_value' => true,
+				'default'      => true,
+			]);
+
+		$this->add_control(
+			'metro_line_color',
+			[
+				'label'     => esc_html__('رنگ بوردر', 'webkima-elements'),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'default'   => 'var(--e-global-color-accent)',
+				'global'    => [
+					'default' => Global_Colors::COLOR_ACCENT,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .webkima-el-metro-list::before' => 'border-color: {{VALUE}};',
+				],
+			]
+		);
+
+			$this->add_control(
+				'metro_line_right',
+				[
+					'label'      => esc_html__('مکان بوردر', 'webkima-elements'),
+					'type'       => \Elementor\Controls_Manager::SLIDER,
+					'size_units' => ['px'],
+					'range'      => [
+						'px'  => [
+							'min' => 0,
+							'max' => 35,
+						],
+					],
+					'default'    => [
+						'unit' => 'px',
+						'size' => 16,
+					],
+					'selectors'  => [
+						'{{WRAPPER}} .webkima-el-metro-list::before' => 'right: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
+
+			$this->add_control(
+				'metro_line_width',
+				[
+					'label'      => esc_html__('سایز بوردر', 'webkima-elements'),
+					'type'       => \Elementor\Controls_Manager::SLIDER,
+					'size_units' => ['px'],
+					'range'      => [
+						'px'  => [
+							'min' => 1,
+							'max' => 10,
+						],
+					],
+					'default'    => [
+						'unit' => 'px',
+						'size' => 2,
+					],
+					'selectors'  => [
+						'{{WRAPPER}} .webkima-el-metro-list::before' => 'border-width: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
+
 		$this->end_controls_section();
 
 	}
@@ -278,64 +375,22 @@ class WebkimaELMetroList extends \Elementor\Widget_Base {
 		$settings = $this->get_settings_for_display();
 		?>
 
-      <ul class="webkima-el-metro-list webkima-el-metro <?= $settings['metro_type']; ?>">
+      <ul class="webkima-el-metro-list webkima-el-metro <?= $settings['metro_type'] . ' ' . $settings['metro_size']; ?> <?= $settings['metro_line'] ? 'show-line' : ''; ?>">
 				<?php
 				foreach ($settings['list_items'] as $index => $item) {
 
 					?>
             <li class="webkima-el-metro">
-               <?php if ($settings['metro_type'] === 'icon'):
-                \Elementor\Icons_Manager::render_icon($settings["metro_icon"], ["aria-hidden" => "true"]);
-                endif; ?>
+							<?php if ($settings['metro_type'] === 'icon'):
+								\Elementor\Icons_Manager::render_icon($settings["metro_icon"], ["aria-hidden" => "true"]);
+							endif; ?>
 							<?php echo $settings['list_items'][ $index ]['text']; ?>
             </li>
 					<?php
 				}
 				?>
       </ul>
-      <style>
-        ul.webkima-el-metro-list {
-          list-style: none;
-          position: relative;
-          padding: 0;
-        }
-
-        ul.webkima-el-metro-list:before {
-          content: '';
-          position: absolute;
-          width: 2px;
-          height: 90%;
-          border-right: dashed 2px blue;
-          right: 16px;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-
-        ul.webkima-el-metro-list li {
-          counter-increment: step-counter;
-          position: relative;
-        }
-        ul.webkima-el-metro-list.ordered > li:before {
-          content: counter(step-counter);
-        }
-        ul.webkima-el-metro-list.ordered > li:before, ul.webkima-el-metro-list.icon > li > i {
-          line-height: 29px;
-          text-align: center;
-          font-size: 1em;
-          width: 26px;
-          height: 26px;
-          top: 0;
-          right: 3px;
-          position: absolute;
-          border-radius: 9px;
-        }
-
-        ul.webkima-el-metro-list.icon > li > i {
-          line-height: 26px;
-        }
-      </style>
 		<?php
 	}
-
 
 }
