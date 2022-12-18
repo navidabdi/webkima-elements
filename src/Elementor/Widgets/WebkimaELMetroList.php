@@ -323,49 +323,49 @@ class WebkimaELMetroList extends \Elementor\Widget_Base {
 			]
 		);
 
-			$this->add_control(
-				'metro_line_right',
-				[
-					'label'      => esc_html__('مکان بوردر', 'webkima-elements'),
-					'type'       => \Elementor\Controls_Manager::SLIDER,
-					'size_units' => ['px'],
-					'range'      => [
-						'px'  => [
-							'min' => 0,
-							'max' => 35,
-						],
+		$this->add_control(
+			'metro_line_right',
+			[
+				'label'      => esc_html__('مکان بوردر', 'webkima-elements'),
+				'type'       => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => ['px'],
+				'range'      => [
+					'px' => [
+						'min' => 0,
+						'max' => 35,
 					],
-					'default'    => [
-						'unit' => 'px',
-						'size' => 16,
-					],
-					'selectors'  => [
-						'{{WRAPPER}} .webkima-el-metro-list::before' => 'right: {{SIZE}}{{UNIT}};',
-					],
-				]
-			);
+				],
+				'default'    => [
+					'unit' => 'px',
+					'size' => 16,
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .webkima-el-metro-list::before' => 'right: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 
-			$this->add_control(
-				'metro_line_width',
-				[
-					'label'      => esc_html__('سایز بوردر', 'webkima-elements'),
-					'type'       => \Elementor\Controls_Manager::SLIDER,
-					'size_units' => ['px'],
-					'range'      => [
-						'px'  => [
-							'min' => 1,
-							'max' => 10,
-						],
+		$this->add_control(
+			'metro_line_width',
+			[
+				'label'      => esc_html__('سایز بوردر', 'webkima-elements'),
+				'type'       => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => ['px'],
+				'range'      => [
+					'px' => [
+						'min' => 1,
+						'max' => 10,
 					],
-					'default'    => [
-						'unit' => 'px',
-						'size' => 2,
-					],
-					'selectors'  => [
-						'{{WRAPPER}} .webkima-el-metro-list::before' => 'border-width: {{SIZE}}{{UNIT}};',
-					],
-				]
-			);
+				],
+				'default'    => [
+					'unit' => 'px',
+					'size' => 2,
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .webkima-el-metro-list::before' => 'border-width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 
