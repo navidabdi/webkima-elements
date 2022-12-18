@@ -1,11 +1,11 @@
 === Webkima Elements ===
 author: Webkima Academy
 Contributors: nabiabdi
-Tags: elementor,persian,parsi,farsi,iran,iranian,rtl,fa_IR,المنتور
+Tags: elementor,persian,parsi,farsi,webkima,iran,iranian,rtl,fa_IR,المنتور
 Requires at least: 5.0
 Tested up to: 6.1.1
-Requires PHP: 5.6
-Stable tag: 1.5.0
+Requires PHP: 7.4
+Stable tag: 1.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+
+= 1.6.0 =
+
+افزودن ویجت المنتور لیست مترو
+سازگاری با نسخه 3.9.1 المنتور
+سازگاری با نسخه 3.9.0 المنتور پرو
 
 = 1.5.0 =
 
