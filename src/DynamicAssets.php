@@ -38,6 +38,7 @@ class DynamicAssets {
 			$options_to_add_css_files += [
 				'we_el_widget_mobile_menu' => WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'mobile-menu.min.css',
 				'we_el_widget_post_carousel' => WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'post-carousel.min.css',
+				'we_el_widget_metro_list' => WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'metro-list.min.css',
 			];
 		}
 

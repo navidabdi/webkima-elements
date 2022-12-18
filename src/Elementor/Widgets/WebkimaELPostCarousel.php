@@ -1,6 +1,6 @@
 <?php
 
-if ( !defined("ABSPATH")) {
+if (!defined("ABSPATH")) {
 	exit(); // Exit if accessed directly
 }
 
@@ -31,7 +31,7 @@ class WebkimaELPostCarousel extends \Elementor\Widget_Base {
 	protected function register_controls() {
 		$post_cat   = [];
 		$categories = get_terms("category");
-		if ( !empty($categories) && !is_wp_error($categories)) {
+		if (!empty($categories) && !is_wp_error($categories)) {
 			foreach ($categories as $category) {
 				$post_cat[ $category->term_id ] = $category->name;
 			}
@@ -39,7 +39,7 @@ class WebkimaELPostCarousel extends \Elementor\Widget_Base {
 
 		$post_taga = [];
 		$tags      = get_terms("post_tag");
-		if ( !empty($tags) && !is_wp_error($tags)) {
+		if (!empty($tags) && !is_wp_error($tags)) {
 			foreach ($tags as $tag) {
 				$post_taga[ $tag->term_id ] = $tag->name;
 			}
@@ -151,14 +151,16 @@ class WebkimaELPostCarousel extends \Elementor\Widget_Base {
 			],
 		]);
 
-		$this->add_control("oneline_title", [
-			"label"        => esc_html__("نمایش عنوان در یک خط", "webkima-elements"),
-			"type"         => \Elementor\Controls_Manager::SWITCHER,
-			"label_on"     => esc_html__("روشن", "your-plugin"),
-			"label_off"    => esc_html__("خاموش", "your-plugin"),
-			"return_value" => true,
-			"default"      => false,
-		]);
+		$this->add_control(
+			'oneline_title',
+			[
+				'label'        => esc_html__('نمایش عنوان در یک خط', 'webkima-elements'),
+				'type'         => \Elementor\Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__('روشن', 'webkima-elements'),
+				'label_off'    => esc_html__('خاموش', 'webkima-elements'),
+				'return_value' => true,
+				'default'      => false,
+			]);
 
 		$this->add_control("hr1", [
 			"type" => \Elementor\Controls_Manager::DIVIDER,
@@ -236,9 +238,9 @@ class WebkimaELPostCarousel extends \Elementor\Widget_Base {
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'default' => 'left',
 				'options' => [
-					'left'   => __('سمت چپ', 'webkima-elements'),
+					'left'       => __('سمت چپ', 'webkima-elements'),
 					'center-hor' => __('وسط', 'webkima-elements'),
-					'right'  => __('سمت راست', 'webkima-elements'),
+					'right'      => __('سمت راست', 'webkima-elements'),
 				],
 			]
 		);
@@ -248,9 +250,9 @@ class WebkimaELPostCarousel extends \Elementor\Widget_Base {
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'default' => 'bottom',
 				'options' => [
-					'top'    => __('بالا', 'webkima-elements'),
+					'top'        => __('بالا', 'webkima-elements'),
 					'center-ver' => __('وسط', 'webkima-elements'),
-					'bottom' => __('پایین', 'webkima-elements'),
+					'bottom'     => __('پایین', 'webkima-elements'),
 				],
 			]
 		);
@@ -383,9 +385,27 @@ class WebkimaELPostCarousel extends \Elementor\Widget_Base {
                 </div>
 					<?php endwhile; ?>
 				<?php endif; ?>
-<script>
-  !function(){const e=document.querySelectorAll(".webkima-el-carousel-item"),t=document.querySelector("#moveRight"),c=document.querySelector("#moveLeft");e[0].classList.add("active");let i=e.length,l=0;function n(t,c){let n=l;c>i-1&&(n=0,l=0),c<0&&(n=i-1,l=i-1),e[t].classList.remove("active"),e[n].classList.add("active")}t.addEventListener("click",(function(){let e=l;l+=1,n(e,l)})),c.addEventListener("click",(function(){let e=l;l-=1,n(e,l)}))}();
-</script>
+          <script>
+            !function () {
+              const e = document.querySelectorAll(".webkima-el-carousel-item"),
+                t = document.querySelector("#moveRight"), c = document.querySelector("#moveLeft");
+              e[0].classList.add("active");
+              let i = e.length, l = 0;
+
+              function n(t, c) {
+                let n = l;
+                c > i - 1 && (n = 0, l = 0), c < 0 && (n = i - 1, l = i - 1), e[t].classList.remove("active"), e[n].classList.add("active")
+              }
+
+              t.addEventListener("click", (function () {
+                let e = l;
+                l += 1, n(e, l)
+              })), c.addEventListener("click", (function () {
+                let e = l;
+                l -= 1, n(e, l)
+              }))
+            }();
+          </script>
       </div>
 		<?php
 	}

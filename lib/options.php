@@ -275,15 +275,22 @@ if ( class_exists( "EFS" ) ) {
 			[
 				'id'       => 'we_el_widget_post_carousel',
 				'type'     => 'switcher',
-				'title'    => __('فعالسازی ویجت اسلایدر مقالات', "webkima-elements"),
-				"subtitle" => __(
-					"ویجت اسلایدر مقالات را فعال یا غیرفعال کنید.",
-					"webkima-elements"
-				),
-				'text_on'  => __( 'فعال', "webkima-elements" ),
-				'text_off' => __( 'غیرفعال', "webkima-elements" ),
+				'title'    => __('فعالسازی ویجت اسلایدر مقالات', 'webkima-elements'),
+				'subtitle' => __('ویجت اسلایدر مقالات را فعال یا غیرفعال کنید.', 'webkima-elements'),
+				'text_on'  => __('فعال', 'webkima-elements'),
+				'text_off' => __('غیرفعال', 'webkima-elements'),
 				"default"    => true,
-				'dependency' => array( 'we_el_widgets', '==', 'true' )
+				'dependency' => array('we_el_widgets', '==', 'true')
+			],
+			[
+				'id'       => 'we_el_widget_metro_list',
+				'type'     => 'switcher',
+				'title'    => __('فعالسازی ویجت لیست مترو', 'webkima-elements'),
+				'subtitle' => __('ویجت لیست مترو را فعال یا غیرفعال کنید.', 'webkima-elements'),
+				'text_on'  => __('فعال', 'webkima-elements'),
+				'text_off' => __('غیرفعال', "webkima-elements"),
+				'default'    => true,
+				'dependency' => array('we_el_widgets', '==', 'true')
 			],
 		],
 	] );
