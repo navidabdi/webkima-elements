@@ -36,9 +36,9 @@ class DynamicAssets {
 
 		if (Base::isOptionActivated('we_el_widgets')) {
 			$options_to_add_css_files += [
-				'we_el_widget_mobile_menu' => WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'mobile-menu.min.css',
+				'we_el_widget_mobile_menu'   => WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'mobile-menu.min.css',
 				'we_el_widget_post_carousel' => WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'post-carousel.min.css',
-				'we_el_widget_metro_list' => WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'metro-list.min.css',
+				'we_el_widget_metro_list'    => WEBKIMA_ELEMENTS_WIDGET_CSS_PATH . 'metro-list.min.css',
 			];
 		}
 
@@ -83,40 +83,42 @@ class DynamicAssets {
 	}
 
 	public static function printStyles(): void {
-		$main_css_file = fopen( WEBKIMA_ELEMENTS_PATH . 'assets/css/main.css', "w" )
-		or die( "Unable to open main.css file!" );
+		$main_css_file = fopen(WEBKIMA_ELEMENTS_PATH . 'assets/css/main.css', "w")
+		or die("Unable to open main.css file!");
 		foreach (self::$styles as $style) {
-			fwrite( $main_css_file, file_get_contents($style) );
+			fwrite($main_css_file, file_get_contents($style));
 		}
-		fclose( $main_css_file );
+		fclose($main_css_file);
 	}
 
 	public static function printJavaScripts(): void {
-		$main_js_file = fopen( WEBKIMA_ELEMENTS_PATH . 'assets/js/main.bundle.js', "w" )
-		or die( "Unable to open main.css file!" );
+		$main_js_file = fopen(WEBKIMA_ELEMENTS_PATH . 'assets/js/main.bundle.js', "w")
+		or die("Unable to open main.css file!");
 		foreach (self::$java_scripts as $java_script) {
-			fwrite( $main_js_file, file_get_contents($java_script) );
+			fwrite($main_js_file, file_get_contents($java_script));
 		}
-		fclose( $main_js_file );
+		fclose($main_js_file);
 	}
 
 	public static function generateStyle($css_file_name, $style): void {
-		$css_file = fopen( WEBKIMA_ELEMENTS_PATH . 'assets/src/css/' . $css_file_name, "w" )
-		or die( "Unable to open file!" );
+		$css_file = fopen(WEBKIMA_ELEMENTS_PATH . 'assets/src/css/' . $css_file_name, "w")
+		or die("Unable to open file!");
 
-		fwrite( $css_file, $style );
-		fclose( $css_file );
+		fwrite($css_file, $style);
+		fclose($css_file);
 	}
 
 	public static function getFontStylePath(): string {
 		$font_style_path = WEBKIMA_ELEMENTS_PATH . 'assets/css/iranyekan-font.css';
-		if ( get_option('webkima_elements')['we-select-font'] == 'vazir' ) {
+		if (get_option('webkima_elements')['we-select-font'] == 'vazir') {
 			$font_style_path = WEBKIMA_ELEMENTS_PATH . 'assets/css/vazir-font.css';
 		}
+
 		return $font_style_path;
 	}
 
 	public static function isFileExistReadable($file_path): bool {
 		return file_exists($file_path) && is_readable($file_path);
 	}
+
 }
