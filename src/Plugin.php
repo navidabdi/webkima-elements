@@ -39,9 +39,9 @@ class Plugin {
   public static function renderDependenciesNotice(): void {
     $user_id = get_current_user_id();
     foreach (Base::getDependencyErrors() as $key => $message) {
-      if (!get_user_meta($user_id, 'webkima_elements_notice_dismissed_' . $key)) {
+      if (!get_user_meta($user_id, 'webkima_elements_notice_' . $key)) {
         printf(
-          '<div class="error"><p>%1$s</p><a href="?webkima-elements-dismissed-%2$s">%3$s</a></div>',
+          '<div class="error"><p>%1$s</p><a href="?webkima-elements-%2$s">%3$s</a></div>',
           $message,
           $key,
           __('بستن', 'webkima-elements')
@@ -53,8 +53,8 @@ class Plugin {
   public static function adminNoticeDismissed(): void {
     $user_id = get_current_user_id();
     foreach (Base::getDependencyErrors() as $key => $message) {
-      if (isset($_GET[ 'webkima-elements-dismissed-' . $key ])) {
-        add_user_meta($user_id, 'webkima_elements_notice_dismissed_' . $key, 'true', true);
+      if (isset($_GET[ 'webkima-elements-' . $key ])) {
+        add_user_meta($user_id, 'webkima_elements_notice_' . $key, 'true', true);
       }
     }
   }

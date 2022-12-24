@@ -48,7 +48,12 @@ class Base {
    * @since  1.0.0
    */
   public static function deactivate(): void {
-
+    $user_id = get_current_user_id();
+    foreach (Base::getDependencyErrors() as $key => $message) {
+      if (get_user_meta($user_id, 'webkima_elements_notice_' . $key) !== null) {
+        delete_user_meta($user_id, 'webkima_elements_notice_' . $key);
+      }
+    }
   }
 
   /**

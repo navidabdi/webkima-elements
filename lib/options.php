@@ -91,7 +91,7 @@ if (class_exists("EFS")) {
   //
   // Create a section
   EFS::createSection($prefix, [
-    "title"  => __("main settings", "webkima-elements"),
+    "title"  => __("تنظیمات فونت", "webkima-elements"),
     "icon"   => "fas fa-rocket",
     "fields" => [
       [
