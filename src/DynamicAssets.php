@@ -18,8 +18,9 @@ class DynamicAssets {
 	public static array $java_scripts = [];
 
 	public static function init(): void {
-		add_action('csf_webkima_elements_save_after', __CLASS__ . '::generateStylesAdnJavaScripts');
-//		self::generateStylesAdnJavaScripts();
+    if (Base::isOptionActivated('we_dynamic_style')) {
+      add_action('csf_webkima_elements_save_after', __CLASS__ . '::generateStylesAdnJavaScripts');
+    }
 	}
 
 	public static function generateStylesAdnJavaScripts(): void {

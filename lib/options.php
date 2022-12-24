@@ -91,7 +91,7 @@ if (class_exists("EFS")) {
   //
   // Create a section
   EFS::createSection($prefix, [
-    "title"  => __("تنظیمات فونت", "webkima-elements"),
+    "title"  => __("تنظیمات افزونه", "webkima-elements"),
     "icon"   => "fas fa-rocket",
     "fields" => [
       [
@@ -102,11 +102,31 @@ if (class_exists("EFS")) {
           WEBKIMA_ELEMENTS_VER,
       ],
       [
+        "id"          => "we_dynamic_style",
+        "type"       => "switcher",
+        "title"      => __("فعالسازی استایل‌های داینامیک", "webkima-elements"),
+        "text_on"    => __("active", "webkima-elements"),
+        "text_off"   => __("deactive", "webkima-elements"),
+        "subtitle"   => __(
+          "با فعال کردن این گزینه کدهای استایل و جاوااسکریپت افزونه وبکیما المنت با توجه به ویجت هایی که از آن استفاده کرده‌اید تولید خواهد شد و با این کار سرعت سایت شما بهبود پیدا می‌کند. <br /><strong style='color:red'>برای استفاده از این امکان هاست شما باید امکان نوشتن از طریق افزونه‌ها را داشته باشد.</strong>",
+          "webkima-elements"
+        ),
+        "default"    => false,
+        "text_width" => 70,
+      ],
+    ],
+  ]);
+
+  EFS::createSection($prefix, [
+    "title"  => __("تنظیمات فونت", "webkima-elements"),
+    "icon"   => "fas fa-font",
+    "fields" => [
+      [
         "id"          => "we-select-font",
         "type"        => "select",
         "title"       => __("Chose your favoriate font", "webkima-elements"),
         "subtitle"    => __(
-          "Chose a font to use as main font on all pages of the website.",
+          Base::isOptionActivated('we_dynamic_style') ? "Chose a font to use as main font on all pages of the website." : "<strong style='color:red'>اگر می‌خواهید فونت را تغییر دهید باید از تب تنظیمات افزونه استایل‌های داینامیک را فعال کنید در غیر این صورت این گزینه کار نخواهد کرد و فقط فونت ایران یکان قابل انتخاب است.</strong>",
           "webkima-elements"
         ),
         "placeholder" => __("Chose a font", "webkima-elements"),
