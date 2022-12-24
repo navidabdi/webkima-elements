@@ -14,6 +14,8 @@ use WebkimaElements\DynamicAssets;
 
 class Base {
 
+  public static array $errors = [];
+
   public static function register(): void {
     require_once WEBKIMA_ELEMENTS_PATH . 'lib/options.php';
     add_action('admin_menu', __CLASS__ . '::webkimaElementsPanel');
@@ -97,7 +99,6 @@ class Base {
    * @since      1.7.0
    */
   public static function getDependencyErrors(): array {
-    $errors                    = [];
     $wordpress_version         = get_bloginfo('version');
     $minimum_wordpress_version = self::getMinWp();
     $minimum_php_version       = self::getMinPHP();
@@ -118,7 +119,7 @@ class Base {
     }
 
     if (!$php_minimum_met) {
-      $errors['php_minimum_met'] = sprintf(
+      self::$errors['php_minimum_met'] = sprintf(
       /* translators: 1. version of php */
         __(
           'برای استفاده از افزونه وبکیما المنت باید <strong>نسخه PHP %s</strong> به بالا را نصب داشته باشید.',
@@ -129,13 +130,13 @@ class Base {
     }
 
     if (!Base::isElementorInstalled()) {
-      $errors['elementor_install'] = __(
+      self::$errors['elementor_install'] = __(
         'اگر می‌خواهید از تمامی امکانات افزونه وبکیما المنت استفاده کنید، می‌توانید افزونه المنتور رایگان را نیز نصب کنید، البته این بستگی به شما دارد و اگر تمایل دارید بدون المنتور از وبکیما المنت استفاده کنید هیچ مشکلی وجود ندارد، تنها به امکانات بخش المنتور دسترسی نخواهید داشت.',
         'webkima-elements'
       );
     }
 
-    return $errors;
+    return self::$errors;
   }
 
   /**
@@ -204,6 +205,18 @@ class Base {
     return $plugin_data['Version'];
   }
 
+  public static function handleCacheNotice(): void {
+    $user_id = get_current_user_id();
+    if (isset($_GET['webkima-elements-cache-notice'])) {
+      add_user_meta($user_id, 'webkima_elements_cache_notice', 'true', true);
+    }
+  }
+
+  public static function isCacheNotice(): bool {
+    $user_id = get_current_user_id();
+
+    return get_user_meta($user_id, 'webkima_elements_cache_notice') !== null;
+  }
 
   public static function webkimaElementsPanelCallback(): void {
     ?>
@@ -221,7 +234,41 @@ class Base {
       <h2 class='nav-tab-wrapper'>
           <a class='nav-tab nav-tab-active' href='#'><?php echo __('Settings', 'webkima-elements'); ?></a>
       </h2>
-    <?php
+      <?php if (self::isCacheNotice()): ?>
+      <div class="cache-notice-wrapper">
+          <div class="cache-notice">
+              <p class="error-message">نکته بسیار مهم:</p>
+              <p>هر بار که تنظیمات را تغییر می‌دهید برای اینکه بتوانید تغییرات را به صورت کامل در سایت خود مشاهده کنید
+                  باید موارد زیر را انجام دهید:</p>
+              <ol>
+                  <li>ابتدا اگر افزونه کش دارید باید کش آن را پاک کنید <a href="https://webkima.com/clear-wp-cache/"
+                                                                          target="_blank">آموزش</a></li>
+                  <li>اگر از سایت‌های CDN مثل کلودفلر استفاده می‌کنید باید کش آن را پاک کنید</li>
+                  <li>باید کش مرورگر خود را پاک کنید. <a href="https://webkima.com/mac-clear-cash/" target="_blank">آموزش</a>
+                  </li>
+              </ol>
+              <p class="error-message">در نهایت اگر بعد پاک کردن کش در تمامی موارد بالا باز هم مشکل داشتید حتما سایت خود
+                  را با تب ناشناس مرورگر تست کنید و ببینید آیا تنظیمات اعمال شده است یا خیر.</p>
+              <div class="cache-notice-buttons">
+                  <a class="cache-notice-button we-close">بستن</a>
+                  <a class="cache-notice-button we-dont-show" href="?webkima-elements-cache-notice">دیگر این پیام را
+                      نمایش نده</a>
+              </div>
+          </div>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          document.querySelector('.csf-save').addEventListener('click', function (e) {
+            document.querySelector('.cache-notice-wrapper').classList.add('active');
+          });
+          document.querySelector('.cache-notice-wrapper').addEventListener('click', function (e) {
+            if (e.target.classList.contains('cache-notice-wrapper') || e.target.classList.contains('cache-notice-button')) {
+              this.classList.remove('active');
+            }
+          });
+        });
+      </script>
+    <?php endif;
   }
 
 }
