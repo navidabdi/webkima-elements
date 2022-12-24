@@ -13,7 +13,7 @@ use WebkimaElements\Enqueue;
 use WebkimaElements\DynamicAssets;
 
 class Base {
-    
+
   public static function register(): void {
     require_once WEBKIMA_ELEMENTS_PATH . 'lib/options.php';
     add_action('admin_menu', __CLASS__ . '::webkimaElementsPanel');
@@ -123,7 +123,24 @@ class Base {
       );
     }
 
+    if (!Base::isElementorInstalled()) {
+      $errors['elementor_install'] = __(
+        'اگر می‌خواهید از تمامی امکانات افزونه وبکیما المنت استفاده کنید، می‌توانید افزونه المنتور رایگان را نیز نصب کنید، البته این بستگی به شما دارد و اگر تمایل دارید بدون المنتور از وبکیما المنت استفاده کنید هیچ مشکلی وجود ندارد، تنها به امکانات بخش المنتور دسترسی نخواهید داشت.',
+        'webkima-elements'
+      );
+    }
+
     return $errors;
+  }
+
+  /**
+   * Checks if elementor plugin is installed.
+   *
+   * @return bool true if elementor is installed.
+   * @since      1.7.0
+   */
+  public static function isElementorInstalled(): bool {
+    return is_plugin_active('elementor/elementor.php');
   }
 
   /**

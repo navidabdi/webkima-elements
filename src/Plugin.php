@@ -53,7 +53,7 @@ class Plugin {
   public static function adminNoticeDismissed(): void {
     $user_id = get_current_user_id();
     foreach (Base::getDependencyErrors() as $key => $message) {
-      if (isset($_GET['webkima-elements-dismissed-' . $key])) {
+      if (isset($_GET[ 'webkima-elements-dismissed-' . $key ])) {
         add_user_meta($user_id, 'webkima_elements_notice_dismissed_' . $key, 'true', true);
       }
     }
@@ -78,8 +78,10 @@ class Plugin {
   public static function init(): void {
     self::adminNoticeDismissed();
     Enqueue::init();
-    RegisterElementorWidgets::init();
     DynamicAssets::init();
+    if (Base::isElementorInstalled()) {
+      RegisterElementorWidgets::init();
+    }
   }
 
   /**
