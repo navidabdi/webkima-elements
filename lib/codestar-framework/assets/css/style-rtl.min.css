@@ -420,3 +420,50 @@
 .about-wrap {
   max-width: 1200px !important;
 }
+.cache-notice-wrapper {
+  inset: 0;
+  position: fixed;
+  z-index: 9999;
+  background: rgba(0,0,0,.5);
+  transform: scale(0);
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+.cache-notice-wrapper.show.active {
+  transform: scale(1);
+  opacity: 1;
+}
+.cache-notice {
+  position: absolute;
+  background: #fff;
+  color: black;
+  width: 450px;
+  height: 420px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+  padding: 1rem 2rem;
+}
+.cache-notice-wrapper .cache-notice-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.cache-notice-wrapper .cache-notice-buttons .cache-notice-button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+.cache-notice-wrapper .cache-notice-buttons .cache-notice-button.we-close {
+  background: #666af6;
+  color: #fff;
+}
+.cache-notice-wrapper .cache-notice-buttons .cache-notice-button.we-dont-show {
+  background: #f0f0ff;
+  color: #666af6;
+}
