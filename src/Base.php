@@ -16,6 +16,8 @@ class Base {
 
   public static array $errors = [];
 
+  public static int $user_id;
+
   public static function register(): void {
     require_once WEBKIMA_ELEMENTS_PATH . 'lib/options.php';
     add_action('admin_menu', __CLASS__ . '::webkimaElementsPanel');
@@ -25,6 +27,11 @@ class Base {
     if (!empty(get_option('webkima_elements')['we_goup_btn'])) {
       Gotoup::register();
     }
+  }
+
+  public static function init(): void {
+    self::$user_id = get_current_user_id();
+    self::handleCacheNotice();
   }
 
   public static function isOptionActivated(string $key): bool {
@@ -50,11 +57,13 @@ class Base {
    * @since  1.0.0
    */
   public static function deactivate(): void {
-    $user_id = get_current_user_id();
     foreach (Base::getDependencyErrors() as $key => $message) {
-      if (get_user_meta($user_id, 'webkima_elements_notice_' . $key) !== null) {
-        delete_user_meta($user_id, 'webkima_elements_notice_' . $key);
+      if (get_user_meta(self::$user_id, 'webkima_elements_notice_' . $key) !== null) {
+        delete_user_meta(self::$user_id, 'webkima_elements_notice_' . $key);
       }
+    }
+    if (!empty(get_user_meta(self::$user_id, 'webkima_elements_cache_notice', true))) {
+      delete_user_meta(self::$user_id, 'webkima_elements_cache_notice');
     }
   }
 
@@ -206,16 +215,13 @@ class Base {
   }
 
   public static function handleCacheNotice(): void {
-    $user_id = get_current_user_id();
-    if (isset($_GET['webkima-elements-cache-notice'])) {
-      add_user_meta($user_id, 'webkima_elements_cache_notice', 'true', true);
+    if (empty(get_user_meta(self::$user_id, 'webkima_elements_cache_notice', true)) && isset($_GET['cache-notice'])) {
+      add_user_meta(self::$user_id, 'webkima_elements_cache_notice', 'true', true);
     }
   }
 
   public static function isCacheNotice(): bool {
-    $user_id = get_current_user_id();
-
-    return get_user_meta($user_id, 'webkima_elements_cache_notice') !== null;
+    return !get_user_meta(self::$user_id, 'webkima_elements_cache_notice', true);
   }
 
   public static function webkimaElementsPanelCallback(): void {
@@ -234,8 +240,7 @@ class Base {
       <h2 class='nav-tab-wrapper'>
           <a class='nav-tab nav-tab-active' href='#'><?php echo __('Settings', 'webkima-elements'); ?></a>
       </h2>
-      <?php if (self::isCacheNotice()): ?>
-      <div class="cache-notice-wrapper">
+      <div class="cache-notice-wrapper <?= self::isCacheNotice() ? 'show' : ''; ?>">
           <div class="cache-notice">
               <p class="error-message">نکته بسیار مهم:</p>
               <p>هر بار که تنظیمات را تغییر می‌دهید برای اینکه بتوانید تغییرات را به صورت کامل در سایت خود مشاهده کنید
@@ -251,7 +256,9 @@ class Base {
                   را با تب ناشناس مرورگر تست کنید و ببینید آیا تنظیمات اعمال شده است یا خیر.</p>
               <div class="cache-notice-buttons">
                   <a class="cache-notice-button we-close">بستن</a>
-                  <a class="cache-notice-button we-dont-show" href="?webkima-elements-cache-notice">دیگر این پیام را
+                  <a class="cache-notice-button we-dont-show"
+                     href="http://localhost/el-test/wp-admin/admin.php?page=webkima-elements&cache-notice=true">دیگر این
+                      پیام را
                       نمایش نده</a>
               </div>
           </div>
@@ -268,7 +275,7 @@ class Base {
           });
         });
       </script>
-    <?php endif;
+    <?php
   }
 
 }

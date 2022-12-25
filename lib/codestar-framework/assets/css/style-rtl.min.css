@@ -429,7 +429,7 @@
   opacity: 0;
   transition: all .3s ease-in-out;
 }
-.cache-notice-wrapper.active {
+.cache-notice-wrapper.show.active {
   transform: scale(1);
   opacity: 1;
 }

@@ -79,6 +79,7 @@ class Plugin {
     self::adminNoticeDismissed();
     Enqueue::init();
     DynamicAssets::init();
+    Base::init();
     if (Base::isElementorInstalled()) {
       RegisterElementorWidgets::init();
     }
