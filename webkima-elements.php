@@ -8,7 +8,7 @@
  * Plugin Name: Webkima Elements
  * Plugin URI: https://wordpress.org/plugins/webkima-elements/
  * Description: A very light plugin for Persianization and installation of Persian fonts on the free and Pro Elementor plugin
- * Version: 1.6.0
+ * Version: 1.7.0
  * Requires at least: 5.7
  * Requires PHP: 7.4
  * Author: Webkima Academy
@@ -16,8 +16,8 @@
  * Text Domain: webkima-elements
  * Domain Path: /languages
  * License: GPLv2 or later
- * Elementor tested up to: 3.9.1
- * Elementor Pro tested up to: 3.9.0
+ * Elementor tested up to: 3.9.2
+ * Elementor Pro tested up to: 3.9.2
  */
 
 namespace WebkimaElements;
