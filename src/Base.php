@@ -155,7 +155,7 @@ class Base {
    * @since      1.7.0
    */
   public static function isElementorInstalled(): bool {
-    return is_plugin_active('elementor/elementor.php');
+    return did_action('elementor/loaded');
   }
 
   /**
