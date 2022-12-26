@@ -47,7 +47,9 @@ class Base {
    * @since  1.0.0
    */
   public static function activate(): void {
-    DynamicAssets::generateStylesAdnJavaScripts();
+    if (Base::isOptionActivated('we_dynamic_style')) {
+      DynamicAssets::generateStylesAdnJavaScripts();
+    }
   }
 
   /**
@@ -257,9 +259,7 @@ class Base {
               <div class="cache-notice-buttons">
                   <a class="cache-notice-button we-close">بستن</a>
                   <a class="cache-notice-button we-dont-show"
-                     href="http://localhost/el-test/wp-admin/admin.php?page=webkima-elements&cache-notice=true">دیگر این
-                      پیام را
-                      نمایش نده</a>
+                     href="?page=webkima-elements&cache-notice=true">دیگر این پیام را نمایش نده</a>
               </div>
           </div>
       </div>
