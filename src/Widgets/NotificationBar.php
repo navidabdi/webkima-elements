@@ -13,7 +13,7 @@ use WebkimaElements\Base;
 class NotificationBar {
 
   /**
-   * Init
+   * Init the NotificationBar class
    *
    * @uses init
    */
