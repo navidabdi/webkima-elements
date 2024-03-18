@@ -70,11 +70,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
-= 1.7.4 =
-
-سازگاری با نسخه 6.4.3 وردپرس
-
-= 1.7.3 =
+= 1.7.5 =
 
 سازگاری با نسخه 6.4.3 وردپرس
 
